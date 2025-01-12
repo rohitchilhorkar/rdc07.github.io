@@ -31,7 +31,7 @@
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-light navbar-light">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">PortFolio</a>
+                <a href="index.html" class="navbar-brand"></a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -39,7 +39,7 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
                         <a href="#home" class="nav-item nav-link active">Home</a>
-                        <a href="#about" class="nav-item nav-link">About</a>
+                        <!-- <a href="#about" class="nav-item nav-link">About</a> -->
                         <!-- <a href="#service" class="nav-item nav-link">Service</a> -->
                         <a href="#experience" class="nav-item nav-link">Experience</a>
                         <!-- <a href="#portfolio" class="nav-item nav-link">Portfolio</a> -->
@@ -65,13 +65,13 @@
                                 <p>I'm</p>
                                 <h1>Rohit Chilhorkar</h1>
                                 <h2></h2>
-                                <div class="typed-text">Aspiring Graduate Trainee</div>
+                                <div class="typed-text">Software Engineer</div>
 <!--                                 <div class="typed-text">Aspiring Software Engineer</div> -->
 <!--                                 <div class="typed-text">Aspiring C++ Developer</div> -->
                             </div>
                             <div class="hero-btn">
-                                <!-- <a class="btn" href="">Hire Me</a> -->
-                                <a class="btn" href="">Contact Me</a>
+                                <a class="btn" href="data\Rohit_Dadarao_Chilhorkar.pdf" download="Rohit_Dadarao_Chilhorkar_Resume.pdf">Download Resume</a>
+                                <a class="btn" href="#contact">Contact Me</a>
                             </div>
                         </div>
                     </div>
@@ -84,98 +84,176 @@
             </div>
         </div>
         <!-- Hero End -->
-
-
-        <!-- About Start -->
-        <div class="about wow fadeInUp" data-wow-delay="0.1s" id="about">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="about-img">
-                            <img src="img/about.jpg" alt="Image">
+        
+        <!--  Start -->
+    <div class="experience" id="experience">
+        <div class="container">
+            <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <p>My Resume</p>
+                <h2>Working Experience</h2>
+            </header>
+            <div class="timeline">
+                <!-- New Experience (Software Engineer at Siemens) -->
+                <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">
+                            July 2023 – Present
                         </div>
+                        <div class="timeline-icons">
+                            <span class="icon-circle"><img src="img\icons\AWS.svg" alt="AWS" /></span>
+                            <span class="icon-circle">
+                                <img src="img\icons\Python.svg" alt="Python" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\PostgresSQL.svg" alt="PostgresSQL" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\Ansible.svg" alt="Ansible" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\HashiCorp Vault.svg" alt="HashiCorp Vault" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\HashiCorp Terraform.svg" alt="HashiCorp Terraform" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\Linux.svg" alt="Linux" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\Docker.svg" alt="Docker" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\Kubernetes.svg" alt="Kubernetes" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\Argo CD.svg" alt="ArgoCD" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\Git.svg" alt="Git" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\Jira.svg" alt="Jira" />
+                            </span>
+                        </div>
+                        <h2>Software Engineer</h2>
+                        <h4>Siemens Digital Industries Software (through Pratiti Technologies Private Limited), Pune</h4>
+                        <p>
+                            - Automated Teamcenter Cloud infrastructure with a Blue-Green deployment strategy using AWS (EC2, RDS, S3), Ansible, Docker, and Python.<br>
+                            - Designed and developed the BG Command Line Tool for clients like Ebusco, BMW, and TATA, consolidating 15 utilities and integrating HashiCorp Vault.<br>
+                            - As a Quality Coach, onboarded projects, increased line coverage to 80%+ across 6 repositories using unittest.<br>
+                            - Automated Ansible Tower job status updates in Microsoft Teams using Webhooks, AWS Lambda, and Python.
+                        </p>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="about-content">
-                            <div class="section-header text-left">
-                                <p>Learn About Me</p>
-                                <h2>A Newbie in Corporate World!</h2>
-                            </div>
-                            <div class="about-text">
-                                <p>
-                                   
-                                </p>
-                            </div>
-                            <div class="skills">
-                                <div class="skill-name">
-                                    <p>C</p><p>82%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="skill-name">
-                                    <p>C++</p><p>70%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="skill-name">
-                                    <p>Data Structures and Algorithm</p><p>60%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="skill-name">
-                                    <p>Web Development</p><p>70%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <a class="btn" href="https://www.linkedin.com/in/rohitchilhorkar/">Learn More</a>
+                </div>
+                
+                <!-- New Experience (Software Engineer at Pratiti Technologies) -->
+                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">
+                            Jan 2023 – Present
                         </div>
+                        <div class="timeline-icons">
+                            <span class="icon-circle">
+                                <img src="img\icons\Java.svg" alt="Java" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\Spring.svg" alt="SpringBoot" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\JavaScript.svg" alt="Javascript" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\MySQL.svg" alt="MySQL" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\CSS3.svg" alt="CSS" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\React.svg" alt="ReactJS" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\HTML5.svg" alt="HTML5" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\Git.svg" alt="Git" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\Jira.svg" alt="Jira" />
+                            </span>
+                        </div>
+                        <h2>Software Engineer</h2>
+                        <h4>Pratiti Technologies Private Limited, Pune</h4>
+                        <p>
+                            - Developed Wengar, an online platform for musicians to collaborate and practice, using Java & SpringBoot (backend) and ReactJS (frontend).<br>
+                            - Implemented post and comment functionality, enabling 50+ musicians to interact and share content.<br>
+                            - Integrated real-time updates with WebSockets, improving user engagement during live sessions.<br>
+                            - Demonstrated platform features to clients 5+ times, resulting in a 30% improvement in collaboration and engagement.
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Previous experience -->
+                <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">
+                            July - January
+                        </div>
+                        <div class="timeline-icons">
+                            <span class="icon-circle">
+                                <img src="img\icons\HTML5.svg" alt="HTML" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\CSS3.svg" alt="CSS" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\JavaScript.svg" alt="Javascript" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\React.svg" alt="ReactJS" />
+                            </span>
+                        </div>
+                        <h2>Web Developer</h2>
+                        <h4>Atechno Embedded Solutions Pvt.Ltd, Pune, Maharashtra</h4>
+                        <p>
+                            - Adapted quickly to a constantly changing, deadline-driven environment.<br>
+                            - Troubleshot and debugged code ensuring compatibility with devices, browsers, and operating systems.
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">
+                            24th March 2022 - 25th April 2022
+                        </div>
+                        <div class="timeline-icons">
+                            <span class="icon-circle">
+                                <img src="img\icons\HTML5.svg" alt="HTML" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\CSS3.svg" alt="CSS" />
+                            </span>
+                            <span class="icon-circle">
+                                <img src="img\icons\JavaScript.svg" alt="Javascript" />
+                            </span>
+                        </div>
+                        <h2>Web Developer</h2>
+                        <h4>Exposys Data Labs, Bangalore, INDIA</h4>
+                        <p>
+                            - Designed and Developed E-learning Website from scratch.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- About End -->
+    </div>
+    
         
         
         
-         <!--  Start -->
-        <div class="experience" id="experience">
-            <div class="container">
-                <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>My Resume</p>
-                    <h2>Working Experience</h2>
-                </header>
-                <div class="timeline">
-                     <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                            <div class="timeline-date">July - January</div>
-                            <h2>Web Developer</h2>
-                            <h4>Atechno Embedded Solutions Pvt.Ltd, Pune, Maharashtra</h4>
-                            <p>
-                               - Adapted quickly to a constantly changing, deadline-driven environment.
-                               - Troubleshoot and debugged code ensuring compatibility with devices, browsers, and operating systems.
-                            </p>
-                        </div> 
-                    </div>                   
-              
-                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                            <div class="timeline-date">24th March 2022 - 25th April 2022</div>
-                            <h2>Web Developer</h2>
-                            <h4>Exposys Data Labs, Bangalore, INDIA</h4>
-                            <p>
-                                Designed and Developed E-learning Website from scratch.
-                            </p>
-                        </div>
-                    </div>
-                     </div>
-                   
-            </div>
-        </div>
+        
+        
+        
       
          
          <!-- Educational Qualification Start -->
@@ -188,11 +266,12 @@
                      <div class="timeline">
                          <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
                             <div class="timeline-text">
-                                <div class="timeline-date">2019 - Present</div>
+                                <div class="timeline-date">2019 - 2023</div>
                                 <h3>Dr. D Y Patil College of Engineering and Innovation, Varale</h3>
                                 <h4>Bachelor of Engineering</h4>
                                 <p>
-                                    - CGPA: 9.02 [Till 6th Semester].
+                                    - CGPA: 9.03.
+                                    - Technical Secretary.
                                     - Member of Training and Placement Cell.
                                 </p>
                             </div> 
@@ -200,11 +279,11 @@
 
                         <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                             <div class="timeline-text">
-                                <div class="timeline-date">2017 - 2019</div>
+                                <div class="timeline-date">2017 - 2019 10th</div>
                                 <h3>Sri Chaitanya Junior Kalasala, Bowrampet, Telangana</h3>
                                 <h4>12<sup>th</sup></h4>
                                 <p>
-                                    Percentage: 92.10. [PCM Group].
+                                    Percentage: 92.10 [PCM Group].
                                 </p>
                             </div>
                         </div>
@@ -215,22 +294,18 @@
                                 <h3>Swarnleela International School, Wani</h3>
                                 <h4>10<sup>th</sup></h4>
                                 <p>
-                                    - CGPA: 9.02 [Till 6th Semester].
-                                    - Member of Training and Placement Cell.
+                                    - CGPA: 10.
                                 </p>
                             </div> 
                         </div>  
                      </div>                   
             </div>           
-               
         </div>
               
        
-
-       
         
         <!-- Contact Start -->
-        <div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">
+        <!-- <div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">
             <div class="container-fluid">
                 <div class="container">
                     <div class="row align-items-center">
@@ -265,7 +340,7 @@
                 </div>
             </div>
         </div>
-        <!-- Contact End -->
+        Contact End -->
 
 
        
@@ -277,18 +352,23 @@
                 <div class="container">
                     <div class="footer-info">
                         <h2>Rohit Chilhorkar</h2>
-                        <h3>Varale, Pune</h3>
+                        <h3>Pune</h3>
                         <div class="footer-menu">
                             <p>+91 83087 45001</p>
                             <p>rdchilhorkar@gmail.com</p>
                         </div>
-                        <div class="footer-social">
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                            <a href=""><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-youtube"></i></a>
-                            <a href=""><i class="fab fa-instagram"></i></a>
-                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/rohitchilhorkar" target="_blank">
+                                <img src="img\icons\LinkedIn.svg" alt="LinkedIn" />
+                            </a>
+                            <a href="https://www.instagram.com/rohit.chilhorkar/" target="_blank">
+                                <img src="img\icons\instagram.svg" alt="Instagram" />
+                            </a>
+                            <a href="https://x.com/RChilhorkar" target="_blank">
+                                <img src="img\icons\Twitter.svg" alt="X (Twitter)" />
+                            </a>
                         </div>
+                        
                     </div>
                 </div>
                 <div class="container copyright">

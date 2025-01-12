@@ -261,7 +261,7 @@ a:focus {
 .hero .hero-image {
     position: relative;
     text-align: right;
-    padding-right: 75px;
+    padding-right: 100px;
 }
 
 .hero .hero-image img {
@@ -271,7 +271,7 @@ a:focus {
 
 .hero .hero-content {
     position: relative;
-    padding-left: 75px;
+    padding-left: 100px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -706,8 +706,8 @@ a:focus {
         border-color: transparent #dddddd transparent transparent;
     }
     
-    .experience .timeline .timeline-item.left .timeline-date,
-    .experience .timeline .timeline-item.right .timeline-date {
+    .experience .timeline .timeline-item.left .timeline-date .timeline-icons,
+    .experience .timeline .timeline-item.right .timeline-date .timeline-icons{
         position: relative;
         top: 0;
         right: auto;
@@ -1588,4 +1588,95 @@ a:focus {
         line-height: 16px;
         padding: 0 5px;
     }
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    padding: 15px;
+}
+
+.timeline-text {
+    flex: 1;
+}
+
+.timeline-date {
+    position: relative;
+    font-weight: bold;
+}
+
+.timeline-icons {
+    display: flex;
+    flex-wrap: wrap; /* Allow icons to wrap to the next line */
+    justify-content: flex-start;
+    position: absolute;
+    top: 0;
+    width: 180px; /* Adjusted width for multiple icons */
+    margin-top: 10px;
+}
+
+.timeline-item.right .timeline-icons {
+    left: -250px; /* For items on the right side of the timeline, attach to the left side */
+    top: 70px;
+}
+
+.timeline-item.left .timeline-icons {
+    right: -250px; /* For items on the left side of the timeline, attach to the right side */
+    top: 70px;
+}
+
+.icon-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px; /* Increased icon size */
+    height: 45px; /* Increased icon size */
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+.icon-circle img {
+    width: 30px; /* Adjusted the icon size */
+    height: 30px;
+}
+
+.icon-circle:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Ensure 3 icons per row */
+.timeline-icons .icon-circle {
+    width: calc(33.33% - 8px); /* 3 icons in a row, considering margin space */
+    margin-right: 8px; /* Space between icons */
+    margin-bottom: 8px; /* Space between rows */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 40px; /* You can adjust the size of the icons */
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Hover effect for enlarging icons */
 }
