@@ -248,7 +248,7 @@ a:focus {
     margin-bottom: 45px;
     padding: 120px 0 0 0;
     overflow: hidden;
-    background: linear-gradient(rgba(239, 35, 60, .95), rgba(239, 35, 60, .95)), url(../img/hero-bg.jpg);
+    background: linear-gradient(rgba(239, 35, 60, .95), rgba(239, 35, 60, .95)), url(../img/hero.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -577,6 +577,9 @@ a:focus {
     background: inherit;
     width: 50%;
     margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 15px;
 }
 
 .experience .timeline .timeline-item.left {
@@ -676,6 +679,59 @@ a:focus {
     font-size: 16px;
 }
 
+.experience .timeline .timeline-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: absolute;
+    top: 70px;
+    width: 180px;
+    margin-top: 10px;
+}
+
+.experience .timeline .timeline-item.right .timeline-icons {
+    left: -250px; /* For items on the right side of the timeline, attach to the left side */
+}
+
+.experience .timeline .timeline-item.left .timeline-icons {
+    right: -250px; /* For items on the left side of the timeline, attach to the right side */
+}
+
+.experience .timeline .icon-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+.experience .timeline .icon-circle img {
+    width: 30px;
+    height: 30px;
+}
+
+.experience .timeline .icon-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure 3 icons per row */
+.experience .timeline .timeline-icons .icon-circle {
+    width: calc(33.33% - 8px); /* 3 icons in a row, considering margin space */
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+/* Mobile responsiveness */
 @media (max-width: 767.98px) {
     .experience .timeline::after {
         left: 8px;
@@ -715,11 +771,28 @@ a:focus {
         text-align: left;
         margin-bottom: 10px;
     }
-    
+
     .experience .timeline .timeline-item.left .timeline-text,
     .experience .timeline .timeline-item.right .timeline-text {
         border-right: none;
         border-left: 5px solid #dddddd;
+    }
+
+    /* Stacking icons on mobile */
+    .experience .timeline .timeline-icons {
+        width: 100%; /* Full width for icons on mobile */
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-top: 0;
+    }
+
+    .experience .timeline .timeline-icons .icon-circle {
+        display: none;
+        width: 45px; /* Adjust icon size for mobile */
+        margin-right: 10px;
+        margin-bottom: 10px;
     }
 }
 
@@ -1588,4 +1661,25 @@ a:focus {
         line-height: 16px;
         padding: 0 5px;
     }
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 40px; /* You can adjust the size of the icons */
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Hover effect for enlarging icons */
 }
