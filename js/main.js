@@ -104,17 +104,6 @@
         $(this).addClass('filter-active');
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
-
-    // Get all images with class 'dynamic-icon'
-    const images = document.querySelectorAll('img.dynamic-icon');
-
-    images.forEach(img => {
-        // Extract the file name without the extension
-        const fileName = img.src.split('/').pop().split('.')[0];
-
-        // Set the 'alt' attribute to the file name
-        img.alt = fileName;
-    });
     
 })(jQuery);
 
