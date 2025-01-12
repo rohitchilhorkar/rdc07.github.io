@@ -261,7 +261,7 @@ a:focus {
 .hero .hero-image {
     position: relative;
     text-align: right;
-    padding-right: 75px;
+    padding-right: 100px;
 }
 
 .hero .hero-image img {
@@ -271,7 +271,7 @@ a:focus {
 
 .hero .hero-content {
     position: relative;
-    padding-left: 75px;
+    padding-left: 100px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
