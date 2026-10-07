@@ -94,8 +94,12 @@
         try { localStorage.setItem("skin", to); } catch (e) {}
         syncSkin();
       };
-      if (document.startViewTransition && !reduce) document.startViewTransition(apply);
-      else apply();
+      if (document.startViewTransition && !reduce && !document.hidden) {
+        // The browser aborts the crossfade if the tab is hidden mid-way; the switch still applies
+        var vt = document.startViewTransition(apply);
+        vt.ready.catch(function () {});
+        vt.finished.catch(function () {});
+      } else apply();
       if (to === "knight") setTimeout(bats, 450);
     });
   }
