@@ -3,8 +3,10 @@
 <body>
 {{> nav}}
 <main id="main" class="wrap page">
-  <a class="crumb" href="/#work">{{> i-left}}All work</a>
-  <div class="case__meta" style="margin-top:24px"><span class="mark mark--nice" aria-hidden="true">N</span><b>NICE Interactive Solutions</b><span>·</span><span>DevOps Engineer</span></div>
+  <a class="crumb" href="/#case-files">{{> i-left}}All case files</a>
+  <div class="dossier">
+  <span class="file__tab">CASE 001</span><span class="stamp-closed" aria-label="Status: closed">CLOSED</span>
+  <div class="case__meta"><b>NICE Interactive Solutions</b><span>·</span><span>DevOps Engineer</span></div>
   <h1>LLM-assisted AWS rightsizing</h1>
   <p class="lede">A tool that reads utilisation across 1,300+ AWS resources, asks an LLM which ones are idle or oversized, and sends the list to the people who own them.</p>
 
@@ -13,6 +15,7 @@
     <li class="stat"><span class="stat__n">~$30K</span><span class="stat__l">saved a year, about 8%</span></li>
     <li class="stat"><span class="stat__n">1,300+</span><span class="stat__l">resources: 400+ EC2, 800+ EFS, ~160 RDS</span></li>
   </ul>
+  </div>
 
   <figure class="figure">
     {{> dg-rightsizing}}
@@ -35,9 +38,8 @@
     <p>Monthly AWS spend went from <b>$32,000 to $29,500</b>, about <b>$30K a year</b>. That figure comes from the rightsizing work; the scheduler is on top of it.</p>
   </div>
 
-  <hr class="rule">
-  <div class="section next">
-    <a class="link" href="/#work">{{> i-left}}All work</a>
+  <div class="next">
+    <a class="link" href="/#case-files">{{> i-left}}All case files</a>
     <a class="link" href="/work/gpu-inference/">GPU inference on EKS {{> i-arrow}}</a>
   </div>
 </main>

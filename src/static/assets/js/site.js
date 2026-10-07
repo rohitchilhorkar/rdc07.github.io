@@ -41,6 +41,36 @@
     el.textContent = out.join(" ");
   });
 
+  // Bats: the nav button, the signal, or the B key send a flock across the screen
+  var BAT = '<svg viewBox="0 0 64 30" fill="currentColor"><path d="M32 9c-1.6-3-3-4.5-4.4-4.8.6 1.6.4 3-.6 3.9C24.6 4.4 19.4 1.6 12 1c3 2.4 4.2 5 3.6 7.6C11.6 6.6 6 6.4 0 8.6c5.2 1.6 8.6 4.6 9.6 8.8 3.4-1.6 7-1.4 10.4.6.6-2.8 2.6-4.2 5.6-4.2C28 15.6 30 20 32 29c2-9 4-13.4 6.4-15.2 3 0 5 1.4 5.6 4.2 3.4-2 7-2.2 10.4-.6 1-4.2 4.4-7.2 9.6-8.8-6-2.2-11.6-2-15.6 0C47.8 6 49 3.4 52 1c-7.4.6-12.6 3.4-15 7.1-1-.9-1.2-2.3-.6-3.9C35 4.5 33.6 6 32 9z"/></svg>';
+  var flying = false;
+  var bats = function () {
+    if (reduce || flying) return;
+    flying = true;
+    var w = window.innerWidth, h = window.innerHeight;
+    for (var i = 0; i < 16; i++) {
+      var b = document.createElement("span");
+      var left = Math.random() < 0.5;
+      b.className = "bat";
+      b.innerHTML = BAT;
+      b.style.left = (left ? -40 : w + 40) + "px";
+      b.style.top = (h * 0.35 + Math.random() * h * 0.6) + "px";
+      b.style.setProperty("--x", (left ? 1 : -1) * (w + 120) + "px");
+      b.style.setProperty("--y", -(h * 0.4 + Math.random() * h * 0.6) + "px");
+      b.style.setProperty("--s", (0.6 + Math.random() * 0.9).toFixed(2));
+      b.style.setProperty("--d", (2.2 + Math.random() * 1.8).toFixed(2) + "s");
+      b.style.animationDelay = (Math.random() * 0.6).toFixed(2) + "s";
+      document.body.appendChild(b);
+      b.addEventListener("animationend", function (e) { if (e.target.classList.contains("bat")) e.target.remove(); });
+    }
+    setTimeout(function () { flying = false; }, 4200);
+  };
+  document.querySelectorAll("[data-bats]").forEach(function (el) { el.addEventListener("click", bats); });
+  document.addEventListener("keydown", function (e) {
+    var t = e.target.tagName;
+    if ((e.key === "b" || e.key === "B") && !e.ctrlKey && !e.metaKey && !e.altKey && t !== "INPUT" && t !== "TEXTAREA") bats();
+  });
+
   // Copy email
   document.querySelectorAll("[data-copy]").forEach(function (btn) {
     btn.addEventListener("click", function () {

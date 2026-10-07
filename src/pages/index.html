@@ -4,76 +4,75 @@
 {{> nav}}
 <main id="main">
 
-  <!-- Hero -->
-  <section class="hero wrap" aria-labelledby="hero-name">
-    <div class="hero__top">
-      <div class="hero__photo">
-        <picture>
-          <source type="image/webp" srcset="/assets/img/rohit-320.webp 320w, /assets/img/rohit-640.webp 640w" sizes="(max-width: 720px) 132px, 220px">
-          <img src="/assets/img/rohit-640.jpg" width="640" height="640" alt="Rohit Chilhorkar smiling, in a black shirt, in front of lit trees" fetchpriority="high">
-        </picture>
-      </div>
-      <div>
-        <p class="hero__eyebrow">SRE · Platform · AI infra</p>
-        <h1 id="hero-name">Rohit Chilhorkar</h1>
-        <p class="hero__lede">Keeps <strong>AWS and Kubernetes</strong> platforms reliable, automated and cheap to run.</p>
-      </div>
-    </div>
-
-    <hr class="hr">
-    <div class="worked">
-      <span>Worked with:</span>
-      <span class="chip-co"><span class="mark mark--nice" aria-hidden="true">N</span>NICE Actimize</span>
-      <span class="chip-co"><span class="mark mark--pratiti" aria-hidden="true">P</span>Pratiti · Siemens DISW</span>
-    </div>
-    <hr class="hr">
-
-    <ul class="now" aria-label="Right now">
-      <li>{{> i-now}}<span class="k">Running</span><span class="v">financial surveillance platforms on AWS EKS</span></li>
-      <li>{{> i-now}}<span class="k">Learning</span><span class="v">MLOps system design: GPU scheduling, Milvus and vector DBs, Kubeflow</span></li>
-      <li>{{> i-now}}<span class="k">Based in</span><span class="v">Pune, India · open to remote</span></li>
-    </ul>
-
-    <hr class="rule">
-    <div class="links">
-      <a class="pill" href="https://github.com/rohitchilhorkar" rel="me">{{> i-github}}GitHub</a>
-      <a class="pill" href="https://www.linkedin.com/in/rohitchilhorkar" rel="me">{{> i-linkedin}}LinkedIn</a>
-      <a class="pill" href="mailto:rdchilhorkar@gmail.com">{{> i-mail}}Email</a>
-      <a class="pill" href="/Rohit_Chilhorkar_Resume.pdf" download>{{> i-download}}Resume</a>
-    </div>
-  </section>
-
-  <!-- Impact -->
-  <section class="wrap reveal" aria-labelledby="impact-h">
-    <hr class="rule">
-    <div class="section">
-      <div class="section__head"><h2 class="label" id="impact-h">{{> i-pulse}}Impact</h2></div>
-      <div class="panel">
-        <div class="panel__bar">
-          <span class="muted">From shipped production work</span>
-          <span class="status"><span class="dot" aria-hidden="true"></span>all systems normal</span>
+  <!-- Hero: the city at night, a searchlight on the clouds -->
+  <section class="hero" aria-labelledby="hero-name">
+    {{> hero-sky}}
+    <div class="wrap hero__inner">
+      <div class="hero__id">
+        <div class="hero__photo">
+          <picture>
+            <source type="image/webp" srcset="/assets/img/rohit-noir-320.webp 320w, /assets/img/rohit-noir-640.webp 640w" sizes="104px">
+            <img src="/assets/img/rohit-noir-640.jpg" width="640" height="640" alt="Rohit Chilhorkar, black and white portrait" fetchpriority="high">
+          </picture>
         </div>
-        <ul class="stats">
-          <li class="stat"><span class="stat__n" data-count="1" data-prefix="" data-suffix="M+">1M+</span><span class="stat__l">financial alerts a day on ActiveMQ messaging</span></li>
-          <li class="stat"><span class="stat__n" data-count="9" data-prefix="" data-suffix="+">9+</span><span class="stat__l">core services moved onto Amazon EKS</span></li>
-          <li class="stat"><span class="stat__n" data-count="475" data-prefix="" data-suffix="+">475+</span><span class="stat__l">EC2 instances on automated AMI migration</span></li>
-          <li class="stat"><span class="stat__n">$32K→$29.5K</span><span class="stat__l">monthly AWS spend, about $30K a year saved</span></li>
-          <li class="stat"><span class="stat__n" data-count="2000" data-prefix="" data-suffix="+">2,000+</span><span class="stat__l">AI agent runs evaluated on DevOps outages</span></li>
-        </ul>
+        <div>
+          <p class="hero__eyebrow">SRE · Platform · AI infra</p>
+          <p class="hero__eyebrow">Pune, India · open to remote</p>
+        </div>
+      </div>
+      <h1 id="hero-name">Rohit Chilhorkar</h1>
+      <p class="hero__lede">Keeps <b>AWS and Kubernetes</b> platforms reliable, automated and cheap to run, while the city sleeps.</p>
+      <div class="links">
+        <a class="btn" href="/Rohit_Chilhorkar_Resume.pdf" download>{{> i-download}}Resume</a>
+        <a class="pill" href="https://github.com/rohitchilhorkar" rel="me">{{> i-github}}GitHub</a>
+        <a class="pill" href="https://www.linkedin.com/in/rohitchilhorkar" rel="me">{{> i-linkedin}}LinkedIn</a>
+        <a class="pill" href="#signal">{{> i-mail}}Light the signal</a>
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
-  <section class="wrap reveal" id="experience" aria-labelledby="xp-h">
-    <hr class="rule">
-    <div class="section">
-      <div class="section__head"><h2 class="label" id="xp-h">{{> i-brief}}Experience</h2></div>
+  <div class="wrap">
+    <!-- Patrol log -->
+    <section class="log reveal" aria-label="Patrol log">
+      <div class="log__bar"><span>patrol.log</span><span class="live"><span class="dot" aria-hidden="true"></span>on patrol</span></div>
+      <ul>
+        <li><span class="tag">ON PATROL</span><span>financial surveillance platforms on AWS EKS</span></li>
+        <li><span class="tag">TRAINING</span><span>MLOps system design: GPU scheduling, Milvus and vector DBs, Kubeflow</span></li>
+        <li><span class="tag">BASE</span><span>Pune, India · open to remote</span></li>
+      </ul>
+      <div class="worked">
+        <span>Allies:</span>
+        <span class="chip-co"><span class="mark" aria-hidden="true">N</span>NICE Actimize</span>
+        <span class="chip-co"><span class="mark mark--pratiti" aria-hidden="true">P</span>Pratiti · Siemens DISW</span>
+      </div>
+    </section>
+
+    <!-- Night report -->
+    <section class="section reveal" aria-labelledby="report-h">
+      <div class="head">
+        <h2 id="report-h"><span class="kicker">Impact</span>Night report</h2>
+        <span class="aside">from shipped production work</span>
+      </div>
+      <ul class="report">
+        <li><span class="stat__n" data-count="1" data-prefix="" data-suffix="M+">1M+</span><span class="stat__l">financial alerts a day on ActiveMQ messaging</span></li>
+        <li><span class="stat__n" data-count="9" data-prefix="" data-suffix="+">9+</span><span class="stat__l">core services moved onto Amazon EKS</span></li>
+        <li><span class="stat__n" data-count="475" data-prefix="" data-suffix="+">475+</span><span class="stat__l">EC2 instances on automated AMI migration</span></li>
+        <li><span class="stat__n sm">$32K→$29.5K</span><span class="stat__l">monthly AWS spend, about $30K a year saved</span></li>
+        <li><span class="stat__n" data-count="2000" data-prefix="" data-suffix="+">2,000+</span><span class="stat__l">AI agent runs evaluated on DevOps outages</span></li>
+      </ul>
+    </section>
+
+    <!-- Missions -->
+    <section class="section reveal" id="missions" aria-labelledby="xp-h">
+      <div class="head">
+        <h2 id="xp-h"><span class="kicker">Experience</span>Missions</h2>
+        <span class="aside">3 operations</span>
+      </div>
       <div class="xp">
         <details open>
           <summary>
             <span class="logo mark--nice" aria-hidden="true">N</span>
-            <span><span class="co">NICE Interactive Solutions</span><br><span class="role">DevOps Engineer · NICE Actimize SurveilX</span><span class="range-m">Nov 2025 to Present</span></span>
+            <span><span class="op">Active mission</span><span class="co">NICE Interactive Solutions</span><span class="role">DevOps Engineer · NICE Actimize SurveilX</span><span class="range-m">Nov 2025 to Present</span></span>
             <span class="when"><span><span class="range">Nov 2025 to Present</span><span class="sep"> · </span><span class="dur" data-start="2025-11">1 yr</span></span><span class="chev">{{> i-chev}}</span></span>
           </summary>
           <div class="body">
@@ -91,7 +90,7 @@
         <details>
           <summary>
             <span class="logo mark--pratiti" aria-hidden="true">P</span>
-            <span><span class="co">Pratiti Technologies</span><br><span class="role">DevOps Engineer · client: Siemens Digital Industries Software</span><span class="range-m">Jul 2023 to Nov 2025</span></span>
+            <span><span class="op">Mission complete</span><span class="co">Pratiti Technologies</span><span class="role">DevOps Engineer · client: Siemens Digital Industries Software</span><span class="range-m">Jul 2023 to Nov 2025</span></span>
             <span class="when"><span><span class="range">Jul 2023 to Nov 2025</span><span class="sep"> · </span><span class="dur" data-start="2023-07" data-end="2025-11">2 yrs 5 mos</span></span><span class="chev">{{> i-chev}}</span></span>
           </summary>
           <div class="body">
@@ -106,7 +105,7 @@
         <details>
           <summary>
             <span class="logo mark--free" aria-hidden="true">F</span>
-            <span><span class="co">Freelance</span><br><span class="role">DevOps and AI Agent Evaluation Engineer</span><span class="range-m">Contract · remote</span></span>
+            <span><span class="op">Side mission</span><span class="co">Freelance</span><span class="role">DevOps and AI Agent Evaluation Engineer</span><span class="range-m">Contract · remote</span></span>
             <span class="when"><span><span class="range">Contract · remote</span></span><span class="chev">{{> i-chev}}</span></span>
           </summary>
           <div class="body">
@@ -117,52 +116,58 @@
           </div>
         </details>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Work -->
-  <section class="wrap reveal" id="work" aria-labelledby="work-h">
-    <hr class="rule">
-    <div class="section">
-      <div class="section__head"><h2 class="label" id="work-h">{{> i-layers}}Work</h2></div>
-      <div class="cases">
-        <article class="case">
-          <div class="case__fig" aria-hidden="true">{{> dg-rightsizing}}</div>
-          <div class="case__meta"><span class="mark mark--nice" aria-hidden="true">N</span><b>NICE</b><span>·</span><span>DevOps Engineer</span></div>
-          <h3><a href="/work/rightsizing/">LLM-assisted AWS rightsizing</a></h3>
-          <p>Utilisation for 1,300+ EC2, EFS and RDS resources goes to an LLM that flags idle and oversized ones, then owners get the list. Monthly spend went from $32K to $29.5K.</p>
-          <div class="chips"><span class="chip">EC2</span><span class="chip">EFS</span><span class="chip">RDS</span><span class="chip">LLM review</span><span class="chip">Owner reports</span></div>
-          <span class="link">Read the case study {{> i-arrow}}</span>
+    <!-- Case files -->
+    <section class="section reveal" id="case-files" aria-labelledby="work-h">
+      <div class="head">
+        <h2 id="work-h"><span class="kicker">Work</span>Case files</h2>
+        <span class="aside">3 cases · all closed</span>
+      </div>
+      <div class="files">
+        <article class="file">
+          <span class="file__tab">CASE 001</span><span class="stamp-closed" aria-label="Status: closed">CLOSED</span>
+          <div>
+            <div class="case__meta"><b>NICE</b><span>·</span><span>DevOps Engineer</span></div>
+            <h3><a href="/work/rightsizing/">The case of the idle instances</a></h3>
+            <p>LLM-assisted AWS rightsizing. Utilisation for 1,300+ EC2, EFS and RDS resources goes to an LLM that flags idle and oversized ones, then owners get the list. Monthly spend went from $32K to $29.5K.</p>
+            <div class="chips"><span class="chip">EC2</span><span class="chip">EFS</span><span class="chip">RDS</span><span class="chip">LLM review</span><span class="chip">Owner reports</span></div>
+            <span class="link">Open the file {{> i-arrow}}</span>
+          </div>
+          <div class="evidence" aria-hidden="true">{{> dg-rightsizing}}</div>
         </article>
-        <article class="case">
-          <div class="case__fig" aria-hidden="true">{{> dg-gpu}}</div>
-          <div class="case__meta"><span class="mark mark--nice" aria-hidden="true">N</span><b>NICE</b><span>·</span><span>DevOps Engineer</span></div>
-          <h3><a href="/work/gpu-inference/">GPU inference on EKS, scaling from zero</a></h3>
-          <p>Three AI services on Amazon EKS, with Karpenter CPU and NVIDIA GPU pools. GPU nodes only exist while the models need them.</p>
-          <div class="chips"><span class="chip">EKS</span><span class="chip">Karpenter</span><span class="chip">NVIDIA GPU</span><span class="chip">Llama 3.x</span><span class="chip">IRSA</span><span class="chip">Helm</span></div>
-          <span class="link">Read the case study {{> i-arrow}}</span>
+        <article class="file">
+          <span class="file__tab">CASE 002</span><span class="stamp-closed" aria-label="Status: closed">CLOSED</span>
+          <div>
+            <div class="case__meta"><b>NICE</b><span>·</span><span>DevOps Engineer</span></div>
+            <h3><a href="/work/gpu-inference/">The GPUs that appear at night</a></h3>
+            <p>GPU inference on EKS, scaling from zero. Three AI services with Karpenter CPU and NVIDIA GPU pools; GPU nodes only exist while the models need them.</p>
+            <div class="chips"><span class="chip">EKS</span><span class="chip">Karpenter</span><span class="chip">NVIDIA GPU</span><span class="chip">Llama 3.x</span><span class="chip">IRSA</span><span class="chip">Helm</span></div>
+            <span class="link">Open the file {{> i-arrow}}</span>
+          </div>
+          <div class="evidence" aria-hidden="true">{{> dg-gpu}}</div>
         </article>
-        <article class="case">
-          <div class="case__fig" aria-hidden="true">{{> dg-bluegreen}}</div>
-          <div class="case__meta"><span class="mark mark--pratiti" aria-hidden="true">P</span><b>Pratiti · Siemens DISW</b><span>·</span><span>DevOps Engineer</span></div>
-          <h3><a href="/work/blue-green/">Blue-Green release CLI</a></h3>
-          <p>One command for production releases that runs 15+ validation and deployment steps, so a release is the same every time.</p>
-          <div class="chips"><span class="chip">Blue-Green</span><span class="chip">Python</span><span class="chip">AWS</span><span class="chip">Release automation</span></div>
-          <span class="link">Read the case study {{> i-arrow}}</span>
+        <article class="file">
+          <span class="file__tab">CASE 003</span><span class="stamp-closed" aria-label="Status: closed">CLOSED</span>
+          <div>
+            <div class="case__meta"><b>Pratiti · Siemens DISW</b><span>·</span><span>DevOps Engineer</span></div>
+            <h3><a href="/work/blue-green/">Two faces of every release</a></h3>
+            <p>A Blue-Green release CLI. One command that runs 15+ validation and deployment steps, so production releases happen the same way every time.</p>
+            <div class="chips"><span class="chip">Blue-Green</span><span class="chip">Python</span><span class="chip">AWS</span><span class="chip">Release automation</span></div>
+            <span class="link">Open the file {{> i-arrow}}</span>
+          </div>
+          <div class="evidence" aria-hidden="true">{{> dg-bluegreen}}</div>
         </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Builds -->
-  <section class="wrap reveal" id="builds" aria-labelledby="builds-h">
-    <hr class="rule">
-    <div class="section">
-      <div class="section__head">
-        <h2 class="label" id="builds-h">{{> i-grid}}Builds</h2>
+    <!-- The Cave -->
+    <section class="section reveal" id="cave" aria-labelledby="cave-h">
+      <div class="head">
+        <h2 id="cave-h"><span class="kicker">Builds</span>The Cave</h2>
         <a class="link" href="https://github.com/rohitchilhorkar">{{> i-github}}rohitchilhorkar</a>
       </div>
-      <div class="repos">
+      <div class="cave">
         <article class="repo">
           <div class="repo__top">
             <h3 class="repo__name">{{> i-repo}}<a href="https://github.com/rohitchilhorkar/ml-api-helm-platform">ml-api-helm-platform</a></h3>
@@ -182,55 +187,52 @@
           <div class="repo__foot"><span class="lang"><i style="background:#427819"></i>Makefile</span><span>Aug 2025</span></div>
         </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Stack -->
-  <section class="wrap reveal" id="stack" aria-labelledby="stack-h">
-    <hr class="rule">
-    <div class="section">
-      <div class="section__head"><h2 class="label" id="stack-h">{{> i-layers}}Stack</h2></div>
-      <div class="stack">
-        <div class="stack__row"><h3>Cloud</h3><div class="chips"><span class="chip">AWS EC2</span><span class="chip">EKS</span><span class="chip">IAM · IRSA</span><span class="chip">VPC</span><span class="chip">RDS</span><span class="chip">S3</span><span class="chip">EFS</span><span class="chip">KMS</span><span class="chip">Linux</span><span class="chip">Cost optimisation</span></div></div>
-        <div class="stack__row"><h3>Containers and platform</h3><div class="chips"><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Karpenter</span><span class="chip">Helm</span><span class="chip">ArgoCD</span><span class="chip">GitOps</span><span class="chip">NVIDIA GPU nodes</span></div></div>
-        <div class="stack__row"><h3>IaC and CI/CD</h3><div class="chips"><span class="chip">Terraform</span><span class="chip">Ansible</span><span class="chip">Jenkins</span><span class="chip">GitLab CI</span><span class="chip">GitHub Actions</span><span class="chip">Blue-Green</span></div></div>
-        <div class="stack__row"><h3>Observability</h3><div class="chips"><span class="chip">Prometheus</span><span class="chip">Grafana</span><span class="chip">CloudWatch</span><span class="chip">Alerting</span><span class="chip">Incident triage</span><span class="chip">Root cause analysis</span></div></div>
-        <div class="stack__row"><h3>Code</h3><div class="chips"><span class="chip">Python (Boto3)</span><span class="chip">Bash</span><span class="chip">YAML</span></div></div>
-        <div class="stack__row"><h3>Messaging and data</h3><div class="chips"><span class="chip">ActiveMQ</span><span class="chip">RabbitMQ</span><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">SQL Server</span></div></div>
-        <div class="stack__row"><h3>AI infra</h3><div class="chips"><span class="chip">Ollama</span><span class="chip">Llama 3.x</span><span class="chip">Milvus</span><span class="chip">GPU scheduling</span><span class="chip">AI agent evals</span></div></div>
+    <!-- Utility belt -->
+    <section class="section reveal" id="belt" aria-labelledby="belt-h">
+      <div class="head">
+        <h2 id="belt-h"><span class="kicker">Stack</span>Utility belt</h2>
+        <span class="aside">7 pouches</span>
       </div>
-    </div>
-  </section>
+      <div class="belt" aria-hidden="true"><div class="belt__buckle">RC</div></div>
+      <div class="pouches">
+        <div class="pouch"><h3>Cloud</h3><div class="chips"><span class="chip">AWS EC2</span><span class="chip">EKS</span><span class="chip">IAM · IRSA</span><span class="chip">VPC</span><span class="chip">RDS</span><span class="chip">S3</span><span class="chip">EFS</span><span class="chip">KMS</span><span class="chip">Linux</span><span class="chip">Cost optimisation</span></div></div>
+        <div class="pouch"><h3>Containers</h3><div class="chips"><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Karpenter</span><span class="chip">Helm</span><span class="chip">ArgoCD</span><span class="chip">GitOps</span><span class="chip">NVIDIA GPU nodes</span></div></div>
+        <div class="pouch"><h3>IaC and CI/CD</h3><div class="chips"><span class="chip">Terraform</span><span class="chip">Ansible</span><span class="chip">Jenkins</span><span class="chip">GitLab CI</span><span class="chip">GitHub Actions</span><span class="chip">Blue-Green</span></div></div>
+        <div class="pouch"><h3>Observability</h3><div class="chips"><span class="chip">Prometheus</span><span class="chip">Grafana</span><span class="chip">CloudWatch</span><span class="chip">Alerting</span><span class="chip">Incident triage</span><span class="chip">Root cause analysis</span></div></div>
+        <div class="pouch"><h3>Code</h3><div class="chips"><span class="chip">Python (Boto3)</span><span class="chip">Bash</span><span class="chip">YAML</span></div></div>
+        <div class="pouch"><h3>Messaging and data</h3><div class="chips"><span class="chip">ActiveMQ</span><span class="chip">RabbitMQ</span><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">SQL Server</span></div></div>
+        <div class="pouch"><h3>AI infra</h3><div class="chips"><span class="chip">Ollama</span><span class="chip">Llama 3.x</span><span class="chip">Milvus</span><span class="chip">GPU scheduling</span><span class="chip">AI agent evals</span></div></div>
+      </div>
+    </section>
 
-  <!-- Certs and education -->
-  <section class="wrap reveal" aria-labelledby="creds-h">
-    <hr class="rule">
-    <div class="section">
-      <div class="section__head"><h2 class="label" id="creds-h">{{> i-award}}Certs and education</h2></div>
+    <!-- Training -->
+    <section class="section reveal" aria-labelledby="creds-h">
+      <div class="head">
+        <h2 id="creds-h"><span class="kicker">Certs and education</span>Training</h2>
+      </div>
       <div class="creds">
         <div class="cred">{{> i-award}}<div><b>AWS Certified Cloud Practitioner</b><span class="muted">CLF-C02</span></div></div>
         <div class="cred">{{> i-cap}}<div><b>B.E. Computer Engineering</b><span class="muted">Savitribai Phule Pune University · First Class with Distinction · 2019 to 2023</span></div></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section class="wrap reveal" id="contact" aria-labelledby="cta-h">
-    <hr class="rule">
-    <div class="section">
-      <div class="cta">
-        <div class="stamp"><img src="/assets/img/rohit-96.webp" width="96" height="96" alt="" loading="lazy"></div>
+    <!-- Light the signal -->
+    <section class="section reveal" id="signal" aria-labelledby="cta-h">
+      <div class="call">
+        <span class="call__beam" aria-hidden="true"></span>
         <div>
-          <h2 id="cta-h">Hiring for SRE or platform work?</h2>
-          <p>Tell me about the role and the team. Pune or remote.</p>
+          <h2 id="cta-h">Light the signal</h2>
+          <p>Hiring for SRE or platform work? Tell me about the role and the team. Pune or remote.</p>
         </div>
-        <div class="cta__actions">
+        <div class="call__actions">
           <button class="pill" type="button" data-copy="rdchilhorkar@gmail.com">{{> i-copy}}<span class="lbl">Copy email</span></button>
-          <a class="btn" href="mailto:rdchilhorkar@gmail.com?subject=Role%20at%20">Send me a note {{> i-out}}</a>
+          <a class="btn" href="mailto:rdchilhorkar@gmail.com?subject=Role%20at%20">Send a note {{> i-out}}</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </main>
 {{> footer}}
 <script type="application/ld+json">

@@ -3,8 +3,10 @@
 <body>
 {{> nav}}
 <main id="main" class="wrap page">
-  <a class="crumb" href="/#work">{{> i-left}}All work</a>
-  <div class="case__meta" style="margin-top:24px"><span class="mark mark--nice" aria-hidden="true">N</span><b>NICE Actimize SurveilX</b><span>·</span><span>DevOps Engineer</span></div>
+  <a class="crumb" href="/#case-files">{{> i-left}}All case files</a>
+  <div class="dossier">
+  <span class="file__tab">CASE 002</span><span class="stamp-closed" aria-label="Status: closed">CLOSED</span>
+  <div class="case__meta"><b>NICE Actimize SurveilX</b><span>·</span><span>DevOps Engineer</span></div>
   <h1>GPU inference on EKS, scaling from zero</h1>
   <p class="lede">Deployed the AI platform for a financial surveillance product on Amazon EKS. GPU nodes only exist while the models need them.</p>
 
@@ -13,6 +15,7 @@
     <li class="stat"><span class="stat__n">0 → N</span><span class="stat__l">NVIDIA GPU nodes, scaled by Karpenter</span></li>
     <li class="stat"><span class="stat__n">0</span><span class="stat__l">static AWS keys, IRSA everywhere</span></li>
   </ul>
+  </div>
 
   <figure class="figure">
     {{> dg-gpu}}
@@ -33,8 +36,7 @@
     <p>GPUs are the most expensive nodes in the cluster. Scaling the pool from zero and keeping everything else off it means paying for GPU time only when inference is actually running.</p>
   </div>
 
-  <hr class="rule">
-  <div class="section next">
+  <div class="next">
     <a class="link" href="/work/rightsizing/">{{> i-left}}AWS rightsizing</a>
     <a class="link" href="/work/blue-green/">Blue-Green release CLI {{> i-arrow}}</a>
   </div>

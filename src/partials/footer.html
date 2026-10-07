@@ -2,18 +2,20 @@
   <div class="wrap">
     <div class="foot__row">
       <span>Rohit Chilhorkar</span>
-      <span>{{year}}</span>
+      <span>On call since 2023 · {{year}}</span>
     </div>
     <p class="foot__build">
       <span>static html + css</span><span aria-hidden="true">·</span>
       <span>deployed on Netlify</span><span aria-hidden="true">·</span>
       <span>commit <a href="{{commit_url}}">{{commit}}</a></span><span aria-hidden="true">·</span>
       <span>built {{built}}</span><span aria-hidden="true">·</span>
-      <a href="https://github.com/rohitchilhorkar/rdc07.github.io">view source</a>
+      <a href="https://github.com/rohitchilhorkar/rdc07.github.io">view source</a><span aria-hidden="true">·</span>
+      <span>press B for bats</span>
     </p>
   </div>
-  <figure class="pune">
-    {{> pune}}
-    <figcaption>Pune, India</figcaption>
+  <figure class="night">
+    {{> skyline}}
+    <div class="ride">{{> car}}</div>
+    <figcaption>Somewhere between Gotham and Pune</figcaption>
   </figure>
 </footer>
