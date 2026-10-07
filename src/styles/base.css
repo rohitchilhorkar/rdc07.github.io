@@ -12,8 +12,3 @@
   ::view-transition-old(root),
   ::view-transition-new(root) { animation: none; }
 }
-
-/* Off duty: the watch's second hand ticks once a second */
-.art-watch .sec { transform-origin: 85px 85px; animation: tick 60s steps(60) infinite; }
-@keyframes tick { to { transform: rotate(360deg); } }
-@media (prefers-reduced-motion: reduce) { .art-watch .sec { animation: none !important; } }
