@@ -359,7 +359,7 @@ button.pill { background: transparent; font: inherit; cursor: pointer; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {
-  .stats { grid-template-columns: repeat(3, 1fr); }
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .case { padding-right: 32px; padding-top: 0; overflow: hidden; }
   .case__fig { position: static; width: auto; margin: 0 -32px 24px; border-radius: 0; border-width: 0 0 1px; box-shadow: none; transform: none; }
   .case:hover .case__fig { transform: none; }
@@ -373,7 +373,7 @@ button.pill { background: transparent; font: inherit; cursor: pointer; }
   .hero { padding-top: 32px; }
   .hero__top { grid-template-columns: 1fr; gap: 24px; }
   .hero__photo { width: 132px; height: 132px; box-shadow: 0 0 0 1px var(--border), 0 0 0 6px var(--surface); }
-  .stats { grid-template-columns: 1fr 1fr; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stat:last-child { grid-column: 1 / -1; }
   .panel { padding: 18px; }
   .xp summary { grid-template-columns: 40px 1fr auto; gap: 12px; }
@@ -394,4 +394,5 @@ button.pill { background: transparent; font: inherit; cursor: pointer; }
   .cta__actions { justify-content: flex-start; }
   .btn--resume-nav .lbl { display: none; }
 }
+@media (max-width: 420px) { .stat__n { font-size: 1.25rem; white-space: normal; } }
 .range-m { display: none; color: var(--muted); font-size: var(--step--1); }
