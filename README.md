@@ -25,7 +25,7 @@ python scripts/build.py
 python -m http.server 8080 --directory dist
 ```
 
-Netlify runs the same build on every push and stamps the commit into the footer.
+Netlify runs the same build on every push. The build minifies CSS and adds a content hash (`?v=`) to CSS and JS links, so they can be cached for a year.
 
 ## Update the resume
 

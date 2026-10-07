@@ -8,11 +8,12 @@ src/styles/         base.css plus one stylesheet per skin, scoped to
                     <html data-skin="..."> and bundled into assets/css/site.css
 {{key}}             replaced with page meta, then site-wide values below
 
-Output goes to dist/. Run locally:  python scripts/build.py
+Output goes to dist/. CSS is minified and assets get a ?v=<hash> for caching.
+Run locally:  python scripts/build.py
 """
 import datetime
+import hashlib
 import json
-import os
 import re
 import shutil
 from pathlib import Path
@@ -22,11 +23,8 @@ SRC = ROOT / "src"
 DIST = ROOT / "dist"
 SITE_URL = "https://rohit-chilhorkar.netlify.app"
 
-commit = os.environ.get("COMMIT_REF", "")[:7] or "local"
 site = {
     "site_url": SITE_URL,
-    "commit": commit,
-    "commit_url": f"https://github.com/rohitchilhorkar/rdc07.github.io/commit/{commit}" if commit != "local" else "https://github.com/rohitchilhorkar/rdc07.github.io",
     "built": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d"),
     "year": str(datetime.date.today().year),
 }
@@ -97,9 +95,17 @@ def build_css():
     parts = [(styles / "base.css").read_text("utf-8")]
     for skin in SKINS:
         parts.append(f"/* ===== skin: {skin} ===== */\n" + scope_css((styles / f"{skin}.css").read_text("utf-8"), skin))
+    css = COMMENT.sub("", "\n".join(parts))
+    css = re.sub(r"\s+", " ", css)
+    css = re.sub(r"\s*([{};,>])\s*", r"\1", css).replace(";}", "}")
     target = DIST / "assets" / "css" / "site.css"
     target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text("\n".join(parts), "utf-8")
+    target.write_text(css, "utf-8")
+
+
+def fingerprint(path):
+    """Short content hash used as ?v= so assets can be cached for a year."""
+    return hashlib.sha256(path.read_bytes()).hexdigest()[:10]
 
 
 def main():
@@ -107,6 +113,9 @@ def main():
         shutil.rmtree(DIST)
     shutil.copytree(SRC / "static", DIST)
     build_css()
+    site["v_css"] = fingerprint(DIST / "assets" / "css" / "site.css")
+    site["v_site"] = fingerprint(DIST / "assets" / "js" / "site.js")
+    site["v_theme"] = fingerprint(DIST / "assets" / "js" / "theme.js")
 
     urls = []
     for page in sorted((SRC / "pages").rglob("*.html")):
@@ -134,7 +143,7 @@ def main():
     sitemap += [f"  <url><loc>{SITE_URL}{u}</loc><lastmod>{site['built']}</lastmod></url>" for u in urls]
     sitemap.append("</urlset>")
     (DIST / "sitemap.xml").write_text("\n".join(sitemap) + "\n", "utf-8")
-    print(f"built {len(urls)} pages, commit {commit}")
+    print(f"built {len(urls)} pages")
 
 
 if __name__ == "__main__":
