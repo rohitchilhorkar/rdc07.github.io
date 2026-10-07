@@ -1,0 +1,23 @@
+<svg class="dg" viewBox="0 0 320 210" role="img" aria-labelledby="dg-gpu-t">
+  <title id="dg-gpu-t">EKS cluster with Karpenter provisioning a CPU node pool for app services and an NVIDIA GPU pool that scales from zero for LLM inference.</title>
+  <defs><marker id="ah-gpu" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path class="ah" d="M0 0 8 4 0 8z"/></marker></defs>
+  <rect class="box dash" x="8" y="8" width="304" height="194" rx="12" fill="none"/>
+  <text class="s" x="20" y="28">amazon eks</text>
+  <rect class="box" x="20" y="44" width="92" height="44" rx="9"/>
+  <text class="t" x="32" y="64">Karpenter</text>
+  <text class="s" x="32" y="79">provisioner</text>
+  <rect class="box" x="20" y="104" width="92" height="36" rx="9"/>
+  <text class="t" x="32" y="126">HPA</text>
+  <rect class="box" x="20" y="150" width="92" height="36" rx="9"/>
+  <text class="t" x="32" y="172">IRSA</text>
+  <rect class="box" x="140" y="44" width="160" height="58" rx="9"/>
+  <text class="t" x="152" y="66">CPU pool</text>
+  <text class="s" x="152" y="82">3 AI services</text>
+  <text class="s" x="152" y="95">queues · vector db</text>
+  <rect class="box-a" x="140" y="120" width="160" height="66" rx="9"/>
+  <text class="t" x="152" y="142">NVIDIA GPU pool</text>
+  <text class="s" x="152" y="158">0 → N · tainted</text>
+  <text class="s" x="152" y="172">LLM inference only</text>
+  <path class="a" d="M112 62H136" marker-end="url(#ah-gpu)"/>
+  <path class="a" d="M112 74Q126 74 126 110T136 150" marker-end="url(#ah-gpu)"/>
+</svg>

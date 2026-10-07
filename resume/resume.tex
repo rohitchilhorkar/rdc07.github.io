@@ -1,0 +1,155 @@
+%-------------------------
+% Rohit Dadarao Chilhorkar - public resume served at /Rohit_Chilhorkar_Resume.pdf
+% Built by .github/workflows/resume.yml. Only verified numbers.
+%-------------------------
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-.62in}
+\addtolength{\textheight}{1.42in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}
+  {\vspace{-5pt}\scshape\raggedright\large}
+  {}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+\pdfgentounicode=1
+
+%----------CUSTOM COMMANDS----------
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-3pt}
+}
+
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}[
+    leftmargin=0.22in,
+    label=\raisebox{0.25ex}{\scriptsize$\bullet$},
+    itemsep=0.5pt,
+    topsep=1pt,
+    parsep=0pt
+  ]
+}
+
+\newcommand{\resumeItemListEnd}{
+  \end{itemize}\vspace{-2pt}
+}
+
+\begin{document}
+
+
+%----------HEADER----------
+\begin{center}
+    {\fontsize{21}{24}\selectfont\textbf{Rohit Dadarao Chilhorkar}} \\[1pt]
+    {\fontsize{11}{13}\selectfont
+    \textit{Site Reliability / Platform Engineer | AWS, Kubernetes, Observability, Python}} \\[2pt]
+    \small
+    Pune, Maharashtra, India $|$
+    +91 8308745001 $|$
+    \href{mailto:rdchilhorkar@gmail.com}{rdchilhorkar@gmail.com} $|$
+    \href{https://linkedin.com/in/rohitchilhorkar}{LinkedIn} $|$
+    \href{https://github.com/rohitchilhorkar}{GitHub} $|$
+    \href{https://rohit-chilhorkar.netlify.app/}{Portfolio}
+\end{center}
+
+%----------SUMMARY----------
+\section{Summary}
+\small{
+\textbf{DevOps / SRE engineer} with \textbf{3+ years} of experience keeping production platforms reliable on \textbf{AWS, Kubernetes and Linux}, most recently on \textbf{NICE Actimize financial market-surveillance systems} that process \textbf{1M+ alerts a day}. Hands-on experience with monitoring and alerting, incident triage, release automation and \textbf{Python/Bash tooling that removes manual toil}, including an LLM-assisted rightsizing tool that cut AWS spend by \textbf{\$30K a year} and fleet automation across \textbf{475+ EC2 instances}. Experienced in Terraform, Ansible, Helm and GPU-backed EKS platforms for AI workloads.
+}
+
+%----------TECHNICAL SKILLS----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+    \textbf{Observability \& Reliability:} Prometheus, Grafana, CloudWatch, Alerting, Incident Triage, Root Cause Analysis \\
+    \textbf{Programming \& Scripting:} Python (Boto3), Bash, YAML \\
+    \textbf{Containers \& Platform:} Docker, Kubernetes, Amazon EKS, Karpenter, Helm, ArgoCD, GitOps, NVIDIA GPU Nodes \\
+    \textbf{DevOps \& Automation:} Git, Ansible, Terraform, Jenkins, GitLab CI, GitHub Actions, Blue-Green Deployments \\
+    \textbf{Cloud \& Cost:} AWS (EC2, EKS, IAM, IRSA, VPC, RDS, S3, EFS, KMS, CloudWatch), Linux, Cost Optimization \\
+    \textbf{Messaging \& Data:} ActiveMQ, RabbitMQ, MySQL, PostgreSQL, SQL Server
+}}
+\end{itemize}
+
+%----------EXPERIENCE----------
+\section{Experience}
+\begin{itemize}[leftmargin=0.15in, label={}]
+
+%----------NICE----------
+\resumeSubheading
+    {DevOps Engineer, NICE Interactive Solutions Private Limited}{Nov 2025 - Present}
+    {Pune, India $|$ NICE Actimize SurveilX: Markets Surveillance, Communication Surveillance, AI}{}
+\resumeItemListStart
+    \resumeItem{Containerized \textbf{9+ core services} of the Markets Surveillance Cloud onto \textbf{Amazon EKS} as Deployments, StatefulSets and Jobs based on each workload's nature, and deployed \textbf{ActiveMQ} messaging handling \textbf{1M+ financial alerts per day}.}
+    \resumeItem{Designed connectivity from the EKS-hosted RCM UI to an IP-whitelisted Tableau server: added an \textbf{Nginx reverse proxy} on the server and whitelisted the \textbf{cluster CIDR} instead of ephemeral pod IPs; \textbf{live in production}.}
+    \resumeItem{Implemented \textbf{SVX Monitor}, log-based observability and alerting for the RedEye surveillance engine on EKS: reads live logs from shared PVC volumes across \textbf{6 components} (4 Deployments, 1 StatefulSet, 1 Job) and detects \textbf{failures, errors and performance issues}, with ConfigMap-driven rules.}
+    \resumeItem{Deployed the SurveilX AI platform (\textbf{3 AI services}: alert classification, alert deduplication, AI Assist) on EKS via \textbf{Jenkins, Ansible, Helm and Terraform}, with \textbf{Karpenter CPU and NVIDIA GPU pools scaling from zero} for Llama 3.1/3.2 inference and IRSA (no static credentials).}
+    \resumeItem{Automated AMI migrations across \textbf{475+ EC2 instances} with \textbf{Python and Bash}, replacing a manual patching process.}
+    \resumeItem{Scripted the \textbf{ActOne upgrade} for the VM-based Communication Surveillance product; supported \textbf{UAT and production} runs, handed over to the team and provided support when needed.}
+    \resumeItem{Automated the \textbf{Market Data Service v2-to-v3 migration}; moved Jenkins to \textbf{dynamic agents}; built CloudWatch-to-S3 log pipelines and automated error analysis in nightly releases.}
+    \resumeItem{Built an \textbf{LLM-assisted rightsizing tool} for \textbf{1,300+ AWS resources} (EC2, EFS, RDS) that cut monthly spend from \textbf{\$32K to \$29.5K} (about \textbf{\$30K a year}), plus a \textbf{nightly scheduler} that stops non-prod EC2.}
+\resumeItemListEnd
+
+%----------SIEMENS----------
+\resumeSubheading
+    {DevOps Engineer, Pratiti Technologies (client: Siemens Digital Industries Software)}{Jul 2023 - Nov 2025}
+    {Pune, India}{}
+\resumeItemListStart
+    \resumeItem{Set up \textbf{Prometheus and Grafana} dashboards and alerting for infrastructure and application incidents, supporting production troubleshooting.}
+    \resumeItem{Built a \textbf{Blue-Green deployment CLI} that automates \textbf{15+ validation and deployment steps} for production releases.}
+    \resumeItem{Provisioned and configured AWS infrastructure (EC2, EKS, RDS, S3, IAM, EFS) with \textbf{Terraform and Ansible}.}
+    \resumeItem{Wrote \textbf{Python and Bash tooling} for deployment validation, IAM permission-boundary troubleshooting and recurring ops tasks.}
+\resumeItemListEnd
+
+%----------AI EVAL----------
+\resumeSubheading
+    {DevOps \& AI Agent Evaluation Engineer, Freelance / Contract}{}
+    {Remote}{}
+\resumeItemListStart
+    \resumeItem{Authored \textbf{75+ production-outage simulations} (Docker, Kubernetes, IaC) covering root-cause debugging and CI/CD failures, used to benchmark autonomous AI agents.}
+    \resumeItem{Promoted to \textbf{Technical Reviewer within 2 months}; reviewed \textbf{450+ tasks} and evaluated \textbf{2,000+ agent runs} for debugging logic and failure analysis.}
+\resumeItemListEnd
+
+\end{itemize}
+
+%-----------EDUCATION & CERTIFICATIONS-----------
+\section{Education \& Certifications}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+    \textbf{B.E. in Computer Engineering}, Savitribai Phule Pune University, First Class with Distinction \hfill \textit{2019 - 2023} \\
+    \textbf{AWS Certified Cloud Practitioner (CLF-C02)}
+}}
+\end{itemize}
+
+\end{document}

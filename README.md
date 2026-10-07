@@ -1,1 +1,27 @@
-# rdc07.github.io
+# rohit-chilhorkar.netlify.app
+
+Portfolio of Rohit Chilhorkar, SRE and Platform Engineer. Static HTML and CSS, about 6 KB of JavaScript, no framework.
+
+## Layout
+
+```
+src/pages/        pages; the first line of each is a <!--meta {...}--> JSON header
+src/partials/     nav, footer, icons, diagrams; included with {{> name}}
+src/static/       copied as is: CSS, JS, images, favicons, resume PDF
+resume/resume.tex resume source; CI compiles it into the PDF the site serves
+scripts/build.py  the build (Python standard library only)
+netlify.toml      build command, security headers, redirects
+```
+
+## Build and preview
+
+```bash
+python scripts/build.py
+python -m http.server 8080 --directory dist
+```
+
+Netlify runs the same build on every push and stamps the commit into the footer.
+
+## Update the resume
+
+Edit `resume/resume.tex` and push to `main`. The `resume` workflow compiles it and commits the new PDF, and Netlify redeploys.

@@ -1,0 +1,44 @@
+<!--meta {"title": "GPU inference on EKS, scaling from zero · Rohit Chilhorkar", "description": "Three AI services on Amazon EKS with Karpenter CPU and NVIDIA GPU node pools that scale from zero for Llama 3.x inference, with IRSA and no static AWS keys."}-->
+{{> head}}
+<body>
+{{> nav}}
+<main id="main" class="wrap page">
+  <a class="crumb" href="/#work">{{> i-left}}All work</a>
+  <div class="case__meta" style="margin-top:24px"><span class="mark mark--nice" aria-hidden="true">N</span><b>NICE Actimize SurveilX</b><span>·</span><span>DevOps Engineer</span></div>
+  <h1>GPU inference on EKS, scaling from zero</h1>
+  <p class="lede">Deployed the AI platform for a financial surveillance product on Amazon EKS. GPU nodes only exist while the models need them.</p>
+
+  <ul class="facts">
+    <li class="stat"><span class="stat__n">3</span><span class="stat__l">AI services: alert classification, deduplication, AI Assist</span></li>
+    <li class="stat"><span class="stat__n">0 → N</span><span class="stat__l">NVIDIA GPU nodes, scaled by Karpenter</span></li>
+    <li class="stat"><span class="stat__n">0</span><span class="stat__l">static AWS keys, IRSA everywhere</span></li>
+  </ul>
+
+  <figure class="figure">
+    {{> dg-gpu}}
+    <figcaption>Two node pools. The GPU pool is tainted so only inference lands there.</figcaption>
+  </figure>
+
+  <div class="prose">
+    <h2>The setup</h2>
+    <ul>
+      <li><b>Two Karpenter node pools</b>: a CPU pool for the application services, and an <b>NVIDIA GPU pool that scales from zero</b>.</li>
+      <li>GPU nodes are <b>tainted</b>, so only the LLM inference workload (Ollama serving Llama 3.1 and 3.2) is scheduled there. <b>HPA</b> scales the model servers.</li>
+      <li>Model storage on shared <b>EFS</b>; Milvus for vector search behind deduplication; RabbitMQ between services.</li>
+      <li><b>IRSA</b> for every service account and Secrets Manager at runtime, so no static credentials in the cluster.</li>
+      <li>Shipped with <b>Jenkins, Ansible, Helm and Terraform</b>.</li>
+    </ul>
+
+    <h2>Why it matters</h2>
+    <p>GPUs are the most expensive nodes in the cluster. Scaling the pool from zero and keeping everything else off it means paying for GPU time only when inference is actually running.</p>
+  </div>
+
+  <hr class="rule">
+  <div class="section next">
+    <a class="link" href="/work/rightsizing/">{{> i-left}}AWS rightsizing</a>
+    <a class="link" href="/work/blue-green/">Blue-Green release CLI {{> i-arrow}}</a>
+  </div>
+</main>
+{{> footer}}
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!--meta {"title": "Blue-Green release CLI · Rohit Chilhorkar", "description": "A command-line tool that runs 15+ validation and deployment steps for Blue-Green production releases on AWS."}-->
+{{> head}}
+<body>
+{{> nav}}
+<main id="main" class="wrap page">
+  <a class="crumb" href="/#work">{{> i-left}}All work</a>
+  <div class="case__meta" style="margin-top:24px"><span class="mark mark--pratiti" aria-hidden="true">P</span><b>Pratiti Technologies · client: Siemens DISW</b><span>·</span><span>DevOps Engineer</span></div>
+  <h1>Blue-Green release CLI</h1>
+  <p class="lede">One command for production releases that runs 15+ validation and deployment steps, the same way every time.</p>
+
+  <ul class="facts">
+    <li class="stat"><span class="stat__n">15+</span><span class="stat__l">validation and deployment steps automated</span></li>
+    <li class="stat"><span class="stat__n">Python · Bash</span><span class="stat__l">validation tooling</span></li>
+    <li class="stat"><span class="stat__n">Terraform</span><span class="stat__l">and Ansible for the AWS infra underneath</span></li>
+  </ul>
+
+  <figure class="figure">
+    {{> dg-bluegreen}}
+    <figcaption>Validate the new environment before it takes over.</figcaption>
+  </figure>
+
+  <div class="prose">
+    <h2>The idea</h2>
+    <p>Blue-Green keeps two environments. The new release goes to the one that is not serving users, gets checked, and only then takes over. If something is wrong, the old one is still there.</p>
+
+    <h2>What was built</h2>
+    <ul>
+      <li>A <b>CLI</b> that wraps the release into one command and runs <b>15+ validation and deployment steps</b> in order.</li>
+      <li>Around it, <b>Python and Bash tooling</b> for deployment validation and IAM permission-boundary troubleshooting.</li>
+      <li>Infrastructure underneath provisioned with <b>Terraform and Ansible</b> on AWS.</li>
+    </ul>
+
+    <h2>Why it matters</h2>
+    <p>Manual release checklists drift. Putting the steps in a tool makes every production release follow the same path, and makes a skipped check much harder.</p>
+  </div>
+
+  <hr class="rule">
+  <div class="section next">
+    <a class="link" href="/work/gpu-inference/">{{> i-left}}GPU inference on EKS</a>
+    <a class="link" href="/#contact">Get in touch {{> i-arrow}}</a>
+  </div>
+</main>
+{{> footer}}
+</body>
+</html>

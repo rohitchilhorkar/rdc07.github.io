@@ -1,0 +1,252 @@
+<!--meta {"title": "Rohit Chilhorkar · SRE and Platform Engineer", "description": "SRE and platform engineer in Pune. AWS, Kubernetes (EKS), Terraform and GPU-backed AI infrastructure. Runs systems that handle 1M+ alerts a day and cut AWS spend by about $30K a year."}-->
+{{> head}}
+<body>
+{{> nav}}
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero wrap" aria-labelledby="hero-name">
+    <div class="hero__top">
+      <div class="hero__photo">
+        <picture>
+          <source type="image/webp" srcset="/assets/img/rohit-320.webp 320w, /assets/img/rohit-640.webp 640w" sizes="(max-width: 720px) 132px, 220px">
+          <img src="/assets/img/rohit-640.jpg" width="640" height="640" alt="Rohit Chilhorkar smiling, in a black shirt, in front of lit trees" fetchpriority="high">
+        </picture>
+      </div>
+      <div>
+        <p class="hero__eyebrow">SRE · Platform · AI infra</p>
+        <h1 id="hero-name">Rohit Chilhorkar</h1>
+        <p class="hero__lede">Keeps <strong>AWS and Kubernetes</strong> platforms reliable, automated and cheap to run.</p>
+      </div>
+    </div>
+
+    <hr class="hr">
+    <div class="worked">
+      <span>Worked with:</span>
+      <span class="chip-co"><span class="mark mark--nice" aria-hidden="true">N</span>NICE Actimize</span>
+      <span class="chip-co"><span class="mark mark--pratiti" aria-hidden="true">P</span>Pratiti · Siemens DISW</span>
+    </div>
+    <hr class="hr">
+
+    <ul class="now" aria-label="Right now">
+      <li>{{> i-now}}<span class="k">Running</span><span class="v">financial surveillance platforms on AWS EKS</span></li>
+      <li>{{> i-now}}<span class="k">Learning</span><span class="v">MLOps system design: GPU scheduling, Milvus and vector DBs, Kubeflow</span></li>
+      <li>{{> i-now}}<span class="k">Based in</span><span class="v">Pune, India · open to remote</span></li>
+    </ul>
+
+    <hr class="rule">
+    <div class="links">
+      <a class="pill" href="https://github.com/rohitchilhorkar" rel="me">{{> i-github}}GitHub</a>
+      <a class="pill" href="https://www.linkedin.com/in/rohitchilhorkar" rel="me">{{> i-linkedin}}LinkedIn</a>
+      <a class="pill" href="mailto:rdchilhorkar@gmail.com">{{> i-mail}}Email</a>
+      <a class="pill" href="/Rohit_Chilhorkar_Resume.pdf" download>{{> i-download}}Resume</a>
+    </div>
+  </section>
+
+  <!-- Impact -->
+  <section class="wrap reveal" aria-labelledby="impact-h">
+    <hr class="rule">
+    <div class="section">
+      <div class="section__head"><h2 class="label" id="impact-h">{{> i-pulse}}Impact</h2></div>
+      <div class="panel">
+        <div class="panel__bar">
+          <span class="muted">From shipped production work</span>
+          <span class="status"><span class="dot" aria-hidden="true"></span>all systems normal</span>
+        </div>
+        <ul class="stats">
+          <li class="stat"><span class="stat__n" data-count="1" data-prefix="" data-suffix="M+">1M+</span><span class="stat__l">financial alerts a day on ActiveMQ messaging</span></li>
+          <li class="stat"><span class="stat__n" data-count="9" data-prefix="" data-suffix="+">9+</span><span class="stat__l">core services moved onto Amazon EKS</span></li>
+          <li class="stat"><span class="stat__n" data-count="475" data-prefix="" data-suffix="+">475+</span><span class="stat__l">EC2 instances on automated AMI migration</span></li>
+          <li class="stat"><span class="stat__n">$32K→$29.5K</span><span class="stat__l">monthly AWS spend, about $30K a year saved</span></li>
+          <li class="stat"><span class="stat__n" data-count="2000" data-prefix="" data-suffix="+">2,000+</span><span class="stat__l">AI agent runs evaluated on DevOps outages</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="wrap reveal" id="experience" aria-labelledby="xp-h">
+    <hr class="rule">
+    <div class="section">
+      <div class="section__head"><h2 class="label" id="xp-h">{{> i-brief}}Experience</h2></div>
+      <div class="xp">
+        <details open>
+          <summary>
+            <span class="logo mark--nice" aria-hidden="true">N</span>
+            <span><span class="co">NICE Interactive Solutions</span><br><span class="role">DevOps Engineer · NICE Actimize SurveilX</span><span class="range-m">Nov 2025 to Present</span></span>
+            <span class="when"><span><span class="range">Nov 2025 to Present</span><span class="sep"> · </span><span class="dur" data-start="2025-11">1 yr</span></span><span class="chev">{{> i-chev}}</span></span>
+          </summary>
+          <div class="body">
+            <ul>
+              <li>Moved <b>9+ core services</b> of the Markets Surveillance Cloud onto <b>Amazon EKS</b> as Deployments, StatefulSets and Jobs, and deployed <b>ActiveMQ</b> messaging for <b>1M+ financial alerts a day</b>.</li>
+              <li>Deployed <b>3 AI services</b> (alert classification, deduplication, AI Assist) on EKS with Karpenter <b>CPU and NVIDIA GPU pools that scale from zero</b> for Llama 3.1 and 3.2 inference, using IRSA instead of static keys.</li>
+              <li>Built an <b>LLM-assisted rightsizing tool</b> for <b>1,300+ AWS resources</b> that cut monthly spend from <b>$32K to $29.5K</b>, plus a nightly scheduler that stops non-prod EC2.</li>
+              <li>Designed connectivity from an EKS-hosted UI to an IP-whitelisted Tableau server: an <b>Nginx reverse proxy</b> plus a whitelisted <b>cluster CIDR</b> instead of ephemeral pod IPs. Live in production.</li>
+              <li>Implemented log-based monitoring and alerting for the surveillance engine on EKS across <b>6 components</b>, catching failures, errors and performance issues.</li>
+              <li>Automated AMI migrations across <b>475+ EC2 instances</b> with Python and Bash, replacing manual patching.</li>
+              <li>Scripted the ActOne upgrade for the VM-based Communication Surveillance product; automated the Market Data Service v2 to v3 migration; moved Jenkins to dynamic agents.</li>
+            </ul>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span class="logo mark--pratiti" aria-hidden="true">P</span>
+            <span><span class="co">Pratiti Technologies</span><br><span class="role">DevOps Engineer · client: Siemens Digital Industries Software</span><span class="range-m">Jul 2023 to Nov 2025</span></span>
+            <span class="when"><span><span class="range">Jul 2023 to Nov 2025</span><span class="sep"> · </span><span class="dur" data-start="2023-07" data-end="2025-11">2 yrs 5 mos</span></span><span class="chev">{{> i-chev}}</span></span>
+          </summary>
+          <div class="body">
+            <ul>
+              <li>Built a <b>Blue-Green deployment CLI</b> that automates <b>15+ validation and deployment steps</b> for production releases.</li>
+              <li>Set up <b>Prometheus and Grafana</b> dashboards and alerting for infrastructure and application incidents.</li>
+              <li>Provisioned AWS infrastructure (EC2, EKS, RDS, S3, IAM, EFS) with <b>Terraform and Ansible</b>.</li>
+              <li>Wrote <b>Python and Bash tooling</b> for deployment validation, IAM permission-boundary troubleshooting and recurring ops tasks.</li>
+            </ul>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span class="logo mark--free" aria-hidden="true">F</span>
+            <span><span class="co">Freelance</span><br><span class="role">DevOps and AI Agent Evaluation Engineer</span><span class="range-m">Contract · remote</span></span>
+            <span class="when"><span><span class="range">Contract · remote</span></span><span class="chev">{{> i-chev}}</span></span>
+          </summary>
+          <div class="body">
+            <ul>
+              <li>Authored <b>75+ production-outage simulations</b> (Docker, Kubernetes, IaC) covering root-cause debugging and CI/CD failures, used to benchmark autonomous AI agents.</li>
+              <li>Promoted to <b>Technical Reviewer within 2 months</b>; reviewed <b>450+ tasks</b> and evaluated <b>2,000+ agent runs</b>.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="wrap reveal" id="work" aria-labelledby="work-h">
+    <hr class="rule">
+    <div class="section">
+      <div class="section__head"><h2 class="label" id="work-h">{{> i-layers}}Work</h2></div>
+      <div class="cases">
+        <article class="case">
+          <div class="case__fig" aria-hidden="true">{{> dg-rightsizing}}</div>
+          <div class="case__meta"><span class="mark mark--nice" aria-hidden="true">N</span><b>NICE</b><span>·</span><span>DevOps Engineer</span></div>
+          <h3><a href="/work/rightsizing/">LLM-assisted AWS rightsizing</a></h3>
+          <p>Utilisation for 1,300+ EC2, EFS and RDS resources goes to an LLM that flags idle and oversized ones, then owners get the list. Monthly spend went from $32K to $29.5K.</p>
+          <div class="chips"><span class="chip">EC2</span><span class="chip">EFS</span><span class="chip">RDS</span><span class="chip">LLM review</span><span class="chip">Owner reports</span></div>
+          <span class="link">Read the case study {{> i-arrow}}</span>
+        </article>
+        <article class="case">
+          <div class="case__fig" aria-hidden="true">{{> dg-gpu}}</div>
+          <div class="case__meta"><span class="mark mark--nice" aria-hidden="true">N</span><b>NICE</b><span>·</span><span>DevOps Engineer</span></div>
+          <h3><a href="/work/gpu-inference/">GPU inference on EKS, scaling from zero</a></h3>
+          <p>Three AI services on Amazon EKS, with Karpenter CPU and NVIDIA GPU pools. GPU nodes only exist while the models need them.</p>
+          <div class="chips"><span class="chip">EKS</span><span class="chip">Karpenter</span><span class="chip">NVIDIA GPU</span><span class="chip">Llama 3.x</span><span class="chip">IRSA</span><span class="chip">Helm</span></div>
+          <span class="link">Read the case study {{> i-arrow}}</span>
+        </article>
+        <article class="case">
+          <div class="case__fig" aria-hidden="true">{{> dg-bluegreen}}</div>
+          <div class="case__meta"><span class="mark mark--pratiti" aria-hidden="true">P</span><b>Pratiti · Siemens DISW</b><span>·</span><span>DevOps Engineer</span></div>
+          <h3><a href="/work/blue-green/">Blue-Green release CLI</a></h3>
+          <p>One command for production releases that runs 15+ validation and deployment steps, so a release is the same every time.</p>
+          <div class="chips"><span class="chip">Blue-Green</span><span class="chip">Python</span><span class="chip">AWS</span><span class="chip">Release automation</span></div>
+          <span class="link">Read the case study {{> i-arrow}}</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Builds -->
+  <section class="wrap reveal" id="builds" aria-labelledby="builds-h">
+    <hr class="rule">
+    <div class="section">
+      <div class="section__head">
+        <h2 class="label" id="builds-h">{{> i-grid}}Builds</h2>
+        <a class="link" href="https://github.com/rohitchilhorkar">{{> i-github}}rohitchilhorkar</a>
+      </div>
+      <div class="repos">
+        <article class="repo">
+          <div class="repo__top">
+            <h3 class="repo__name">{{> i-repo}}<a href="https://github.com/rohitchilhorkar/ml-api-helm-platform">ml-api-helm-platform</a></h3>
+            <span class="badge">Public</span>
+          </div>
+          <p>One Helm chart a platform team owns. ML engineers onboard a model with a few lines of values; the chart owns probes, security context, autoscaling and secrets.</p>
+          <div class="chips"><span class="chip">Helm</span><span class="chip">helm-unittest</span><span class="chip">Terraform EKS</span><span class="chip">GitHub Actions → ECR</span><span class="chip">FastAPI</span></div>
+          <div class="repo__foot"><span class="lang"><i style="background:#844fba"></i>HCL</span><span>Sep 2026</span></div>
+        </article>
+        <article class="repo">
+          <div class="repo__top">
+            <h3 class="repo__name">{{> i-repo}}<a href="https://github.com/rohitchilhorkar/The-Monitoring-Stack">The-Monitoring-Stack</a></h3>
+            <span class="badge">Public</span>
+          </div>
+          <p>A "ghost pod" lab: the app container is dead, the Istio sidecar lives on, and dashboards go red while kubectl looks green.</p>
+          <div class="chips"><span class="chip">Istio</span><span class="chip">Prometheus</span><span class="chip">Loki</span><span class="chip">Tempo</span><span class="chip">k6</span><span class="chip">SLOs</span></div>
+          <div class="repo__foot"><span class="lang"><i style="background:#427819"></i>Makefile</span><span>Aug 2025</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stack -->
+  <section class="wrap reveal" id="stack" aria-labelledby="stack-h">
+    <hr class="rule">
+    <div class="section">
+      <div class="section__head"><h2 class="label" id="stack-h">{{> i-layers}}Stack</h2></div>
+      <div class="stack">
+        <div class="stack__row"><h3>Cloud</h3><div class="chips"><span class="chip">AWS EC2</span><span class="chip">EKS</span><span class="chip">IAM · IRSA</span><span class="chip">VPC</span><span class="chip">RDS</span><span class="chip">S3</span><span class="chip">EFS</span><span class="chip">KMS</span><span class="chip">Linux</span><span class="chip">Cost optimisation</span></div></div>
+        <div class="stack__row"><h3>Containers and platform</h3><div class="chips"><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Karpenter</span><span class="chip">Helm</span><span class="chip">ArgoCD</span><span class="chip">GitOps</span><span class="chip">NVIDIA GPU nodes</span></div></div>
+        <div class="stack__row"><h3>IaC and CI/CD</h3><div class="chips"><span class="chip">Terraform</span><span class="chip">Ansible</span><span class="chip">Jenkins</span><span class="chip">GitLab CI</span><span class="chip">GitHub Actions</span><span class="chip">Blue-Green</span></div></div>
+        <div class="stack__row"><h3>Observability</h3><div class="chips"><span class="chip">Prometheus</span><span class="chip">Grafana</span><span class="chip">CloudWatch</span><span class="chip">Alerting</span><span class="chip">Incident triage</span><span class="chip">Root cause analysis</span></div></div>
+        <div class="stack__row"><h3>Code</h3><div class="chips"><span class="chip">Python (Boto3)</span><span class="chip">Bash</span><span class="chip">YAML</span></div></div>
+        <div class="stack__row"><h3>Messaging and data</h3><div class="chips"><span class="chip">ActiveMQ</span><span class="chip">RabbitMQ</span><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">SQL Server</span></div></div>
+        <div class="stack__row"><h3>AI infra</h3><div class="chips"><span class="chip">Ollama</span><span class="chip">Llama 3.x</span><span class="chip">Milvus</span><span class="chip">GPU scheduling</span><span class="chip">AI agent evals</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certs and education -->
+  <section class="wrap reveal" aria-labelledby="creds-h">
+    <hr class="rule">
+    <div class="section">
+      <div class="section__head"><h2 class="label" id="creds-h">{{> i-award}}Certs and education</h2></div>
+      <div class="creds">
+        <div class="cred">{{> i-award}}<div><b>AWS Certified Cloud Practitioner</b><span class="muted">CLF-C02</span></div></div>
+        <div class="cred">{{> i-cap}}<div><b>B.E. Computer Engineering</b><span class="muted">Savitribai Phule Pune University · First Class with Distinction · 2019 to 2023</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="wrap reveal" id="contact" aria-labelledby="cta-h">
+    <hr class="rule">
+    <div class="section">
+      <div class="cta">
+        <div class="stamp"><img src="/assets/img/rohit-96.webp" width="96" height="96" alt="" loading="lazy"></div>
+        <div>
+          <h2 id="cta-h">Hiring for SRE or platform work?</h2>
+          <p>Tell me about the role and the team. Pune or remote.</p>
+        </div>
+        <div class="cta__actions">
+          <button class="pill" type="button" data-copy="rdchilhorkar@gmail.com">{{> i-copy}}<span class="lbl">Copy email</span></button>
+          <a class="btn" href="mailto:rdchilhorkar@gmail.com?subject=Role%20at%20">Send me a note {{> i-out}}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{{> footer}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rohit Chilhorkar",
+  "jobTitle": "Site Reliability and Platform Engineer",
+  "url": "{{site_url}}/",
+  "image": "{{site_url}}/assets/img/rohit-640.jpg",
+  "email": "mailto:rdchilhorkar@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Pune", "addressCountry": "IN" },
+  "alumniOf": "Savitribai Phule Pune University",
+  "knowsAbout": ["Site Reliability Engineering", "Kubernetes", "Amazon EKS", "AWS", "Terraform", "Platform Engineering", "MLOps"],
+  "sameAs": ["https://github.com/rohitchilhorkar", "https://www.linkedin.com/in/rohitchilhorkar"]
+}
+</script>
+</body>
+</html>

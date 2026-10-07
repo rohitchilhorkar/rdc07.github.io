@@ -1,0 +1,46 @@
+<!--meta {"title": "LLM-assisted AWS rightsizing · Rohit Chilhorkar", "description": "A tool that reviews utilisation for 1,300+ AWS resources with an LLM, flags idle and oversized ones, and emails owners. Monthly AWS spend went from $32K to $29.5K."}-->
+{{> head}}
+<body>
+{{> nav}}
+<main id="main" class="wrap page">
+  <a class="crumb" href="/#work">{{> i-left}}All work</a>
+  <div class="case__meta" style="margin-top:24px"><span class="mark mark--nice" aria-hidden="true">N</span><b>NICE Interactive Solutions</b><span>·</span><span>DevOps Engineer</span></div>
+  <h1>LLM-assisted AWS rightsizing</h1>
+  <p class="lede">A tool that reads utilisation across 1,300+ AWS resources, asks an LLM which ones are idle or oversized, and sends the list to the people who own them.</p>
+
+  <ul class="facts">
+    <li class="stat"><span class="stat__n">$32K→$29.5K</span><span class="stat__l">monthly AWS spend</span></li>
+    <li class="stat"><span class="stat__n">~$30K</span><span class="stat__l">saved a year, about 8%</span></li>
+    <li class="stat"><span class="stat__n">1,300+</span><span class="stat__l">resources: 400+ EC2, 800+ EFS, ~160 RDS</span></li>
+  </ul>
+
+  <figure class="figure">
+    {{> dg-rightsizing}}
+    <figcaption>Utilisation goes in, an LLM sorts it, owners decide.</figcaption>
+  </figure>
+
+  <div class="prose">
+    <h2>The problem</h2>
+    <p>The estate was large: hundreds of EC2 instances, two or three EFS volumes per instance, and around 160 RDS databases. Checking each one by hand for waste does not scale, and the person looking at a metric is rarely the person who knows whether the workload still matters.</p>
+
+    <h2>What was built</h2>
+    <ul>
+      <li>An export of <b>CPU and memory utilisation</b> for EC2, EFS and RDS.</li>
+      <li>An <b>LLM review</b> that labels each resource as idle, underutilised or over-provisioned.</li>
+      <li><b>Email reports to resource owners</b>, so the call to stop, shrink or keep stays with the people who know the workload.</li>
+      <li>Alongside it, a <b>nightly scheduler</b> that stops non-production instances.</li>
+    </ul>
+
+    <h2>Result</h2>
+    <p>Monthly AWS spend went from <b>$32,000 to $29,500</b>, about <b>$30K a year</b>. That figure comes from the rightsizing work; the scheduler is on top of it.</p>
+  </div>
+
+  <hr class="rule">
+  <div class="section next">
+    <a class="link" href="/#work">{{> i-left}}All work</a>
+    <a class="link" href="/work/gpu-inference/">GPU inference on EKS {{> i-arrow}}</a>
+  </div>
+</main>
+{{> footer}}
+</body>
+</html>
