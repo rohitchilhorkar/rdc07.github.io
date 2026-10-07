@@ -255,6 +255,20 @@ button.pill { font: inherit; cursor: pointer; }
 .cred svg { width: 24px; height: 24px; color: var(--accent); flex: none; margin-top: 2px; }
 .cred b { display: block; font-weight: 600; }
 
+/* ---------- off patrol ---------- */
+.offduty { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.hobby { display: grid; grid-template-columns: 150px 1fr; gap: 22px; align-items: center; padding: 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); transition: border-color 0.2s; }
+.hobby:hover { border-color: var(--accent); }
+.hobby__art { color: #8d96a3; }
+.hobby__art .art { width: 100%; height: auto; transition: transform 0.4s var(--ease); }
+.hobby:hover .art-bike { transform: translateX(5px); }
+.hobby__art .fill { fill: rgba(255, 201, 60, 0.1); }
+.hobby__art .lamp { fill: var(--accent); stroke: var(--accent); filter: drop-shadow(0 0 6px rgba(255, 201, 60, 0.8)); }
+.hobby__art .hand-s { stroke: var(--accent); }
+.hobby h3 { font-size: 1.4rem; color: var(--accent); }
+.hobby p { color: #c8c3b9; margin-top: 6px; }
+.hobby p b { color: var(--text); font-weight: 600; }
+
 /* ---------- light the signal ---------- */
 .call { position: relative; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: radial-gradient(500px 260px at 82% 0%, rgba(255, 201, 60, 0.16), transparent 70%), var(--surface); padding: 40px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
 .call h2 { font-size: clamp(2rem, 5vw, 3.2rem); }
@@ -363,7 +377,8 @@ button.pill { font: inherit; cursor: pointer; }
   .xp .body { padding: 0 16px 18px 20px; }
   .file { padding: 28px 18px 22px 22px; }
   .stamp-closed { top: 10px; right: 10px; }
-  .cave, .creds, .facts { grid-template-columns: 1fr; }
+  .cave, .creds, .facts, .offduty { grid-template-columns: 1fr; }
+  .hobby { grid-template-columns: 110px 1fr; gap: 16px; padding: 18px; }
   .facts li { border-right: 0; border-bottom: 1px solid var(--border); }
   .facts li:last-child { border-bottom: 0; }
   .call { grid-template-columns: 1fr; padding: 28px 22px; }

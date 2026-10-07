@@ -301,6 +301,19 @@ button.pill { background: transparent; font: inherit; cursor: pointer; }
 .cred svg { width: 22px; height: 22px; color: var(--accent); flex: none; margin-top: 2px; }
 .cred b { font-weight: 600; display: block; }
 
+/* ---------- off duty ---------- */
+.offduty { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.hobby { display: grid; grid-template-columns: 150px 1fr; gap: 22px; align-items: center; padding: 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.hobby__art { color: var(--muted); }
+.hobby__art .art { width: 100%; height: auto; transition: transform 0.4s var(--ease); }
+.hobby:hover .art-bike { transform: translateX(5px); }
+.hobby__art .fill { fill: color-mix(in srgb, var(--accent) 16%, transparent); }
+.hobby__art .lamp { fill: color-mix(in srgb, var(--accent) 45%, transparent); stroke: var(--accent); }
+.hobby__art .hand-s { stroke: var(--accent); }
+.hobby h3 { font-size: var(--step-1); }
+.hobby p { font-family: var(--font-serif); font-size: 1.0625rem; line-height: 1.55; color: var(--muted); margin-top: 6px; }
+.hobby p b { color: var(--text); font-weight: 500; }
+
 /* ---------- cta ---------- */
 .cta {
   display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;
@@ -390,7 +403,8 @@ button.pill { background: transparent; font: inherit; cursor: pointer; }
   .case { padding: 0 20px 24px; }
   .case__fig { margin: 0 -20px 20px; }
   .case h3 { font-size: 1.625rem; }
-  .repos, .creds, .facts { grid-template-columns: 1fr; }
+  .repos, .creds, .facts, .offduty { grid-template-columns: 1fr; }
+  .hobby { grid-template-columns: 110px 1fr; gap: 16px; padding: 18px; }
   .stack__row { grid-template-columns: 1fr; gap: 10px; }
   .cta { grid-template-columns: 1fr; text-align: left; }
   .stamp { display: none; }
