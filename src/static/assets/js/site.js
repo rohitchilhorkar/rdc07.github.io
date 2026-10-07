@@ -18,6 +18,7 @@
       else root.removeAttribute("data-theme");
       try { localStorage.setItem("theme", light ? "light" : "dark"); } catch (e) {}
       sync();
+      syncSkin();
     });
   }
 
@@ -65,11 +66,39 @@
     }
     setTimeout(function () { flying = false; }, 4200);
   };
+  var isKnight = function () { return root.getAttribute("data-skin") === "knight"; };
   document.querySelectorAll("[data-bats]").forEach(function (el) { el.addEventListener("click", bats); });
   document.addEventListener("keydown", function (e) {
     var t = e.target.tagName;
-    if ((e.key === "b" || e.key === "B") && !e.ctrlKey && !e.metaKey && !e.altKey && t !== "INPUT" && t !== "TEXTAREA") bats();
+    if (isKnight() && (e.key === "b" || e.key === "B") && !e.ctrlKey && !e.metaKey && !e.altKey && t !== "INPUT" && t !== "TEXTAREA") bats();
   });
+
+  // Skin switch: warm <-> Night Shift, remembered, with a crossfade where supported
+  var skinBtn = document.querySelector("[data-skin-toggle]");
+  var themeColor = document.querySelector('meta[name="theme-color"]');
+  var syncSkin = function () {
+    var k = isKnight();
+    if (skinBtn) {
+      skinBtn.setAttribute("aria-pressed", String(k));
+      skinBtn.setAttribute("aria-label", k ? "Switch to the warm theme" : "Switch to Night Shift theme");
+      skinBtn.title = k ? "Switch to warm" : "Switch to Night Shift";
+    }
+    if (themeColor) themeColor.setAttribute("content", k ? "#07090c" : (root.getAttribute("data-theme") === "light" ? "#faf8f4" : "#262522"));
+  };
+  syncSkin();
+  if (skinBtn) {
+    skinBtn.addEventListener("click", function () {
+      var to = isKnight() ? "warm" : "knight";
+      var apply = function () {
+        root.setAttribute("data-skin", to);
+        try { localStorage.setItem("skin", to); } catch (e) {}
+        syncSkin();
+      };
+      if (document.startViewTransition && !reduce) document.startViewTransition(apply);
+      else apply();
+      if (to === "knight") setTimeout(bats, 450);
+    });
+  }
 
   // Copy email
   document.querySelectorAll("[data-copy]").forEach(function (btn) {

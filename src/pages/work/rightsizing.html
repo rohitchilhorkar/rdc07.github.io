@@ -3,10 +3,10 @@
 <body>
 {{> nav}}
 <main id="main" class="wrap page">
-  <a class="crumb" href="/#case-files">{{> i-left}}All case files</a>
+  <a class="crumb" href="/#work">{{> i-left}}<span class="w">All work</span><span class="k">All case files</span></a>
   <div class="dossier">
-  <span class="file__tab">CASE 001</span><span class="stamp-closed" aria-label="Status: closed">CLOSED</span>
-  <div class="case__meta"><b>NICE Interactive Solutions</b><span>·</span><span>DevOps Engineer</span></div>
+  <span class="file__tab k">CASE 001</span><span class="stamp-closed k" aria-label="Status: closed">CLOSED</span>
+  <div class="case__meta"><span class="mark mark--nice" aria-hidden="true">N</span><b>NICE Interactive Solutions</b><span>·</span><span>DevOps Engineer</span></div>
   <h1>LLM-assisted AWS rightsizing</h1>
   <p class="lede">A tool that reads utilisation across 1,300+ AWS resources, asks an LLM which ones are idle or oversized, and sends the list to the people who own them.</p>
 
@@ -38,8 +38,9 @@
     <p>Monthly AWS spend went from <b>$32,000 to $29,500</b>, about <b>$30K a year</b>. That figure comes from the rightsizing work; the scheduler is on top of it.</p>
   </div>
 
+  <hr class="rule w">
   <div class="next">
-    <a class="link" href="/#case-files">{{> i-left}}All case files</a>
+    <a class="link" href="/#work">{{> i-left}}<span class="w">All work</span><span class="k">All case files</span></a>
     <a class="link" href="/work/gpu-inference/">GPU inference on EKS {{> i-arrow}}</a>
   </div>
 </main>

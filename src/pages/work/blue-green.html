@@ -3,10 +3,10 @@
 <body>
 {{> nav}}
 <main id="main" class="wrap page">
-  <a class="crumb" href="/#case-files">{{> i-left}}All case files</a>
+  <a class="crumb" href="/#work">{{> i-left}}<span class="w">All work</span><span class="k">All case files</span></a>
   <div class="dossier">
-  <span class="file__tab">CASE 003</span><span class="stamp-closed" aria-label="Status: closed">CLOSED</span>
-  <div class="case__meta"><b>Pratiti Technologies · client: Siemens DISW</b><span>·</span><span>DevOps Engineer</span></div>
+  <span class="file__tab k">CASE 003</span><span class="stamp-closed k" aria-label="Status: closed">CLOSED</span>
+  <div class="case__meta"><span class="mark mark--pratiti" aria-hidden="true">P</span><b>Pratiti Technologies · client: Siemens DISW</b><span>·</span><span>DevOps Engineer</span></div>
   <h1>Blue-Green release CLI</h1>
   <p class="lede">One command for production releases that runs 15+ validation and deployment steps, the same way every time.</p>
 
@@ -37,6 +37,7 @@
     <p>Manual release checklists drift. Putting the steps in a tool makes every production release follow the same path, and makes a skipped check much harder.</p>
   </div>
 
+  <hr class="rule w">
   <div class="next">
     <a class="link" href="/work/gpu-inference/">{{> i-left}}GPU inference on EKS</a>
     <a class="link" href="/#contact">Get in touch {{> i-arrow}}</a>

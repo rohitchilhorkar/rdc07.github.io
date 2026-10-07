@@ -106,6 +106,8 @@ button.pill { font: inherit; cursor: pointer; }
 .head::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 72px; height: 3px; background: var(--accent); }
 .head h2 { font-size: clamp(2rem, 5vw, 3rem); }
 .head .kicker { display: block; font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 6px; }
+.head h2 > svg { display: none; }
+.head .kicker + * { display: block; }
 .head .aside { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); }
 
 /* ---------- hero ---------- */
@@ -192,6 +194,8 @@ button.pill { font: inherit; cursor: pointer; }
 }
 .file::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent); border-radius: var(--radius) 0 0 var(--radius); }
 .file:hover { border-color: #3a4757; transform: translateY(-2px); }
+.file .evidence { order: 2; }
+.case__meta .mark { display: none; }
 .file__tab { position: absolute; top: -12px; left: 24px; padding: 2px 12px; background: var(--accent); color: var(--accent-ink); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; border-radius: 3px; }
 .stamp-closed {
   position: absolute; right: 20px; top: 16px; z-index: 2; padding: 3px 10px; border: 2px solid var(--stamp); color: var(--stamp);
@@ -340,7 +344,7 @@ button.pill { font: inherit; cursor: pointer; }
   .report li:nth-child(2n) { border-right: 0; }
   .report li:last-child { grid-column: 1 / -1; border-bottom: 0; }
   .file { grid-template-columns: 1fr; }
-  .evidence { order: -1; transform: none; margin-top: 8px; }
+  .file .evidence { order: -1; transform: none; margin-top: 8px; }
 }
 @media (max-width: 720px) {
   :root { --section: 64px; --gutter: 16px; }

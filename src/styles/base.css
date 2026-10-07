@@ -1,0 +1,14 @@
+/* Shared by both skins. Each skin's own stylesheet is scoped by the build
+   to :root[data-skin="warm"] or :root[data-skin="knight"]. */
+
+/* Markup that belongs to one skin only */
+[data-skin="warm"] .k,
+[data-skin="knight"] .w { display: none !important; }
+
+/* Crossfade when switching skins (where the browser supports it) */
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: 0.5s; }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none; }
+}

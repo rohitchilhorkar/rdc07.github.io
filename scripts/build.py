@@ -4,6 +4,8 @@
 src/pages/**.html   pages; first line is  <!--meta {json}-->
 src/partials/*.html included with  {{> name}}
 src/static/**       copied as is
+src/styles/         base.css plus one stylesheet per skin, scoped to
+                    <html data-skin="..."> and bundled into assets/css/site.css
 {{key}}             replaced with page meta, then site-wide values below
 
 Output goes to dist/. Run locally:  python scripts/build.py
@@ -47,10 +49,64 @@ def render(text, ctx, depth=0):
     return VAR.sub(var, text)
 
 
+SKINS = ("warm", "knight")
+COMMENT = re.compile(r"/\*.*?\*/", re.S)
+
+
+def scope_selector(sel, skin):
+    """Make one selector apply only while <html data-skin="skin"> is set."""
+    sel = sel.strip()
+    root = f':root[data-skin="{skin}"]'
+    if sel.startswith(":root"):
+        return root + sel[len(":root"):]
+    if sel.startswith("html"):
+        return root + sel[len("html"):]
+    if sel.startswith(".no-js"):
+        return root + sel
+    return f"{root} {sel}"
+
+
+def scope_css(css, skin):
+    """Prefix every rule with the skin selector. Recurses into @media/@supports;
+    @keyframes and other at-rules are copied as is."""
+    css = COMMENT.sub("", css)
+    out, i = [], 0
+    while True:
+        start = css.find("{", i)
+        if start == -1:
+            break
+        prelude = css[i:start].strip()
+        depth, j = 1, start + 1
+        while depth:
+            depth += {"{": 1, "}": -1}.get(css[j], 0)
+            j += 1
+        body = css[start + 1:j - 1]
+        if prelude.startswith(("@media", "@supports")):
+            out.append(f"{prelude} {{\n{scope_css(body, skin)}}}\n")
+        elif prelude.startswith("@"):
+            out.append(f"{prelude} {{{body}}}\n")
+        else:
+            sels = ", ".join(scope_selector(s, skin) for s in prelude.split(","))
+            out.append(f"{sels} {{{body}}}\n")
+        i = j
+    return "".join(out)
+
+
+def build_css():
+    styles = SRC / "styles"
+    parts = [(styles / "base.css").read_text("utf-8")]
+    for skin in SKINS:
+        parts.append(f"/* ===== skin: {skin} ===== */\n" + scope_css((styles / f"{skin}.css").read_text("utf-8"), skin))
+    target = DIST / "assets" / "css" / "site.css"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text("\n".join(parts), "utf-8")
+
+
 def main():
     if DIST.exists():
         shutil.rmtree(DIST)
     shutil.copytree(SRC / "static", DIST)
+    build_css()
 
     urls = []
     for page in sorted((SRC / "pages").rglob("*.html")):
