@@ -216,11 +216,11 @@ button.pill { background: transparent; font: inherit; cursor: pointer; }
 
 /* ---------- experience ---------- */
 .xp { position: relative; display: grid; gap: 4px; }
-.xp::before { content: ""; position: absolute; left: 23px; top: 24px; bottom: 24px; border-left: 1px dashed var(--border); }
+.xp::before { content: ""; position: absolute; left: 38px; top: 24px; bottom: 24px; border-left: 1px dashed var(--border); }
 .xp details { position: relative; border-radius: 14px; transition: background-color 0.2s var(--ease); }
 .xp details:hover, .xp details[open] { background: color-mix(in srgb, var(--surface) 60%, transparent); }
 .xp summary {
-  list-style: none; cursor: pointer; display: grid; grid-template-columns: 48px 1fr auto; gap: 16px;
+  list-style: none; cursor: pointer; display: grid; grid-template-columns: 76px 1fr auto; gap: 16px;
   align-items: center; padding: 14px 12px 14px 0; border-radius: 14px;
 }
 .xp summary::-webkit-details-marker { display: none; }
@@ -230,7 +230,8 @@ button.pill { background: transparent; font: inherit; cursor: pointer; }
 .xp .when { display: flex; align-items: center; gap: 12px; color: var(--muted); text-align: right; font-size: var(--step--1); }
 .xp .chev { transition: transform 0.25s var(--ease); flex: none; }
 .xp details[open] .chev { transform: rotate(180deg); }
-.xp .body { padding: 0 16px 20px 64px; }
+.xp .body { padding: 0 16px 20px 92px; }
+.xp .logo { justify-self: center; }
 .xp .body ul { display: grid; gap: 10px; }
 .xp .body li { font-size: 1rem; line-height: 1.65; color: color-mix(in srgb, var(--text) 78%, var(--muted)); padding-left: 18px; position: relative; }
 .xp .body li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0.8; }
@@ -384,14 +385,14 @@ button.pill { background: transparent; font: inherit; cursor: pointer; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stat:last-child { grid-column: 1 / -1; }
   .panel { padding: 18px; }
-  .xp summary { grid-template-columns: 40px 1fr auto; gap: 12px; }
+  .xp summary { grid-template-columns: 60px 1fr auto; gap: 12px; }
   .xp .logo { width: 40px; height: 40px; font-size: 16px; }
-  .xp::before { left: 19px; }
+  .xp::before { left: 30px; }
   .xp .when .dur, .xp .when .range, .xp .when .sep { display: none; }
   .now li { grid-template-columns: 18px 1fr; row-gap: 2px; }
   .now .v { grid-column: 2; }
   .xp .role .range-m { display: block; }
-  .xp .body { padding: 0 8px 18px 52px; }
+  .xp .body { padding: 0 8px 18px 72px; }
   .case { padding: 0 20px 24px; }
   .case__fig { margin: 0 -20px 20px; }
   .case h3 { font-size: 1.625rem; }

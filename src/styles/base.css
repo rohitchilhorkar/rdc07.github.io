@@ -81,3 +81,12 @@
 @media (prefers-reduced-motion: reduce) {
   html .sim__title .dot, html .sim__log li, html .in .dg .a, html .figure .dg .a, html .in .dg rect, html .cmdk[open] .cmdk__box { animation: none !important; }
 }
+
+/* Company logos: shown unaltered on a white tile so they read on dark themes */
+.co-tile { display: inline-flex; align-items: center; justify-content: center; height: 22px; padding: 0 7px; background: #fff; border-radius: 5px; flex: none; }
+.co-tile img { display: block; height: 12px; width: auto; }
+:root[data-skin] .xp .logo.logo--img { width: 76px; height: 44px; padding: 9px 10px; background: #fff; border-radius: 10px; clip-path: none; }
+:root[data-skin] .xp .logo--img img { display: block; width: 100%; height: 100%; object-fit: contain; }
+@media (max-width: 720px) {
+  :root[data-skin] .xp .logo.logo--img { width: 60px; height: 36px; padding: 7px 8px; }
+}

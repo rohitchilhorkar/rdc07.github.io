@@ -166,7 +166,7 @@ button.pill { font: inherit; cursor: pointer; }
 .xp details { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); transition: border-color 0.2s; }
 .xp details[open], .xp details:hover { border-color: #33404f; }
 .xp details[open] { border-left: 3px solid var(--accent); }
-.xp summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 52px 1fr auto; gap: 16px; align-items: center; padding: 18px 20px; }
+.xp summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 76px 1fr auto; gap: 16px; align-items: center; padding: 18px 20px; }
 .xp summary::-webkit-details-marker { display: none; }
 .xp .logo { width: 52px; height: 52px; display: grid; place-items: center; font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--accent-ink); clip-path: polygon(50% 0, 100% 22%, 100% 70%, 50% 100%, 0 70%, 0 22%); }
 .logo.mark--nice { background: var(--accent); }
@@ -178,7 +178,8 @@ button.pill { font: inherit; cursor: pointer; }
 .xp .when { display: flex; align-items: center; gap: 12px; color: var(--muted); font-family: var(--font-mono); font-size: 0.8rem; text-align: right; }
 .xp .chev { color: var(--accent); transition: transform 0.25s var(--ease); }
 .xp details[open] .chev { transform: rotate(180deg); }
-.xp .body { padding: 0 24px 22px 88px; }
+.xp .body { padding: 0 24px 22px 112px; }
+.xp .logo { justify-self: center; }
 .xp .body ul { display: grid; gap: 10px; }
 .xp .body li { position: relative; padding-left: 20px; line-height: 1.65; color: #d2cdc3; }
 .xp .body li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 8px; background: var(--accent); clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
@@ -356,7 +357,7 @@ button.pill { font: inherit; cursor: pointer; }
   .hero h1 { max-width: none; }
   .hero__photo { width: 76px; height: 76px; }
   .log li { grid-template-columns: 1fr; gap: 0; }
-  .xp summary { grid-template-columns: 44px 1fr auto; gap: 12px; padding: 16px; }
+  .xp summary { grid-template-columns: 60px 1fr auto; gap: 12px; padding: 16px; }
   .xp .logo { width: 44px; height: 44px; font-size: 1.1rem; }
   .xp .when .range, .xp .when .dur, .xp .when .sep { display: none; }
   .range-m { display: block; }
