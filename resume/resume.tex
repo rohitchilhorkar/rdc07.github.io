@@ -1,6 +1,8 @@
 %-------------------------
 % Rohit Dadarao Chilhorkar - public resume served at /Rohit_Chilhorkar_Resume.pdf
-% Built by .github/workflows/resume.yml. Only verified numbers.
+% Source: Rohit_Master_Resume.tex with internal tool names made generic.
+% Built by .github/workflows/resume.yml.
+% Only verified numbers. Tailor every variant from this file.
 %-------------------------
 \documentclass[letterpaper,11pt]{article}
 
@@ -68,12 +70,11 @@
 
 \begin{document}
 
-
 %----------HEADER----------
 \begin{center}
     {\fontsize{21}{24}\selectfont\textbf{Rohit Dadarao Chilhorkar}} \\[1pt]
     {\fontsize{11}{13}\selectfont
-    \textit{Site Reliability / Platform Engineer | AWS, Kubernetes, Observability, Python}} \\[2pt]
+    \textit{DevOps / Platform Engineer | AWS, EKS, Terraform, GenAI Infrastructure}} \\[2pt]
     \small
     Pune, Maharashtra, India $|$
     +91 8308745001 $|$
@@ -86,19 +87,20 @@
 %----------SUMMARY----------
 \section{Summary}
 \small{
-\textbf{DevOps / SRE engineer} with \textbf{3+ years} of experience keeping production platforms reliable on \textbf{AWS, Kubernetes and Linux}, most recently on \textbf{NICE Actimize financial market-surveillance systems} that process \textbf{1M+ alerts a day}. Hands-on experience with monitoring and alerting, incident triage, release automation and \textbf{Python/Bash tooling that removes manual toil}, including an LLM-assisted rightsizing tool that cut AWS spend by \textbf{\$30K a year} and fleet automation across \textbf{475+ EC2 instances}. Experienced in Terraform, Ansible, Helm and GPU-backed EKS platforms for AI workloads.
+\textbf{DevOps Engineer} with \textbf{3+ years} of experience building and running production infrastructure on \textbf{AWS and Kubernetes}. Hands-on experience building \textbf{EKS platforms for GenAI inference} (Karpenter-managed GPU/CPU nodes, Ollama/Llama 3.1) and for regulated financial-surveillance systems that process \textbf{1M+ alerts a day}. Experienced in fleet-scale automation with \textbf{Terraform, Ansible, Python and Bash}, from AMI migrations across 475+ EC2 instances to blue-green release tooling, and in \textbf{cloud cost optimization} that cut a \textbf{\$32K monthly AWS bill by about 8\%}.
 }
 
 %----------TECHNICAL SKILLS----------
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
 \small{\item{
-    \textbf{Observability \& Reliability:} Prometheus, Grafana, CloudWatch, Alerting, Incident Triage, Root Cause Analysis \\
-    \textbf{Programming \& Scripting:} Python (Boto3), Bash, YAML \\
-    \textbf{Containers \& Platform:} Docker, Kubernetes, Amazon EKS, Karpenter, Helm, ArgoCD, GitOps, NVIDIA GPU Nodes \\
-    \textbf{DevOps \& Automation:} Git, Ansible, Terraform, Jenkins, GitLab CI, GitHub Actions, Blue-Green Deployments \\
-    \textbf{Cloud \& Cost:} AWS (EC2, EKS, IAM, IRSA, VPC, RDS, S3, EFS, KMS, CloudWatch), Linux, Cost Optimization \\
-    \textbf{Messaging \& Data:} ActiveMQ, RabbitMQ, MySQL, PostgreSQL, SQL Server
+    \textbf{Cloud:} AWS (EKS, EC2, IAM, VPC, RDS, S3, EFS, KMS, CloudWatch), Linux \\
+    \textbf{Kubernetes \& Containers:} EKS, Karpenter, Docker, Helm, ArgoCD, GitOps, RBAC \\
+    \textbf{IaC \& Automation:} Terraform, Ansible, Python (Boto3), Bash \\
+    \textbf{CI/CD:} Jenkins, GitLab CI, GitHub Actions, Blue-Green Deployments, SonarQube \\
+    \textbf{Observability:} Prometheus, Grafana, CloudWatch, Incident Triage \\
+    \textbf{Security:} IAM, IRSA, Vault, KMS, Secrets Management \\
+    \textbf{GenAI Infrastructure:} Ollama, Llama 3.1, RAG, Milvus, NVIDIA GPU nodes on EKS
 }}
 \end{itemize}
 
@@ -112,33 +114,26 @@
     {Pune, India $|$ NICE Actimize SurveilX: Markets Surveillance, Communication Surveillance, AI}{}
 \resumeItemListStart
     \resumeItem{Containerized \textbf{9+ core services} of the Markets Surveillance Cloud onto \textbf{Amazon EKS} as Deployments, StatefulSets and Jobs based on each workload's nature, and deployed \textbf{ActiveMQ} messaging handling \textbf{1M+ financial alerts per day}.}
-    \resumeItem{Designed connectivity from the EKS-hosted RCM UI to an IP-whitelisted Tableau server: added an \textbf{Nginx reverse proxy} on the server and whitelisted the \textbf{cluster CIDR} instead of ephemeral pod IPs; \textbf{live in production}.}
-    \resumeItem{Implemented \textbf{SVX Monitor}, log-based observability and alerting for the RedEye surveillance engine on EKS: reads live logs from shared PVC volumes across \textbf{6 components} (4 Deployments, 1 StatefulSet, 1 Job) and detects \textbf{failures, errors and performance issues}, with ConfigMap-driven rules.}
-    \resumeItem{Deployed the SurveilX AI platform (\textbf{3 AI services}: alert classification, alert deduplication, AI Assist) on EKS via \textbf{Jenkins, Ansible, Helm and Terraform}, with \textbf{Karpenter CPU and NVIDIA GPU pools scaling from zero} for Llama 3.1/3.2 inference and IRSA (no static credentials).}
-    \resumeItem{Automated AMI migrations across \textbf{475+ EC2 instances} with \textbf{Python and Bash}, replacing a manual patching process.}
+    \resumeItem{Designed connectivity from an EKS-hosted case-management UI to an IP-whitelisted Tableau server: added an \textbf{Nginx reverse proxy} on the server and whitelisted the \textbf{cluster CIDR} instead of ephemeral pod IPs; \textbf{live in production}.}
+    \resumeItem{Implemented \textbf{log-based observability and alerting} for the surveillance engine on EKS: reads live logs from shared PVC volumes across \textbf{6 components} (4 Deployments, 1 StatefulSet, 1 Job) and detects \textbf{failures, errors and performance issues}, with ConfigMap-driven rules.}
+    \resumeItem{Deployed the SurveilX AI platform (\textbf{3 AI services}: alert classification, alert deduplication, AI Assist) on EKS via \textbf{Jenkins, Ansible, Helm and Terraform}, with \textbf{Karpenter CPU and NVIDIA GPU pools scaling from zero} for Ollama / Llama 3.1/3.2 inference and IRSA (no static credentials).}
+    \resumeItem{Automated the migration of \textbf{475+ EC2 instances} to \textbf{Amazon Linux 2023} (AL2 end of support) with \textbf{Python and Bash}, closing patch gaps and meeting \textbf{antivirus compliance}.}
     \resumeItem{Scripted the \textbf{ActOne upgrade} for the VM-based Communication Surveillance product; supported \textbf{UAT and production} runs, handed over to the team and provided support when needed.}
-    \resumeItem{Automated the \textbf{Market Data Service v2-to-v3 migration}; moved Jenkins to \textbf{dynamic agents}; built CloudWatch-to-S3 log pipelines and automated error analysis in nightly releases.}
+    \resumeItem{Moved Jenkins to \textbf{on-demand dynamic agents}, retiring \textbf{10 always-on t3.2xlarge} build machines; automated the \textbf{Market Data Service v2-to-v3 migration} and CloudWatch-to-S3 log pipelines.}
     \resumeItem{Built an \textbf{LLM-assisted rightsizing tool} for \textbf{1,300+ AWS resources} (EC2, EFS, RDS) that cut monthly spend from \textbf{\$32K to \$29.5K} (about \textbf{\$30K a year}), plus a \textbf{nightly scheduler} that stops non-prod EC2.}
 \resumeItemListEnd
 
 %----------SIEMENS----------
 \resumeSubheading
-    {DevOps Engineer, Pratiti Technologies (client: Siemens Digital Industries Software)}{Jul 2023 - Nov 2025}
-    {Pune, India}{}
+    {DevOps Engineer, Siemens Digital Industries Software (via Pratiti Technologies)}{Jul 2023 - Nov 2025}
+    {Pune, India $|$ Teamcenter X (cloud PLM)}{}
 \resumeItemListStart
-    \resumeItem{Set up \textbf{Prometheus and Grafana} dashboards and alerting for infrastructure and application incidents, supporting production troubleshooting.}
-    \resumeItem{Built a \textbf{Blue-Green deployment CLI} that automates \textbf{15+ validation and deployment steps} for production releases.}
-    \resumeItem{Provisioned and configured AWS infrastructure (EC2, EKS, RDS, S3, IAM, EFS) with \textbf{Terraform and Ansible}.}
-    \resumeItem{Wrote \textbf{Python and Bash tooling} for deployment validation, IAM permission-boundary troubleshooting and recurring ops tasks.}
-\resumeItemListEnd
-
-%----------AI EVAL----------
-\resumeSubheading
-    {DevOps \& AI Agent Evaluation Engineer, Freelance / Contract}{}
-    {Remote}{}
-\resumeItemListStart
-    \resumeItem{Authored \textbf{75+ production-outage simulations} (Docker, Kubernetes, IaC) covering root-cause debugging and CI/CD failures, used to benchmark autonomous AI agents.}
-    \resumeItem{Promoted to \textbf{Technical Reviewer within 2 months}; reviewed \textbf{450+ tasks} and evaluated \textbf{2,000+ agent runs} for debugging logic and failure analysis.}
+    \resumeItem{Automated version upgrades of \textbf{Teamcenter X} with a \textbf{Blue-Green deployment} strategy, enabling \textbf{zero-downtime releases} and removing manual upgrade steps.}
+    \resumeItem{Built a \textbf{Blue-Green deployment CLI} that automates \textbf{15+ post-deployment checks}, saving \textbf{\textasciitilde30 min per release}.}
+    \resumeItem{Led the migration to \textbf{containerized workloads}, making deployments easier to scale and speeding up customer environment provisioning.}
+    \resumeItem{Provisioned AWS infrastructure (EC2, EKS, RDS, S3, IAM, EFS) with \textbf{Terraform and Ansible}; set up \textbf{Prometheus and Grafana} alerting; migrated workloads to \textbf{AWS Graviton}.}
+    \resumeItem{Built \textbf{PLMXML Multiverse} (\textbf{hackathon}), an \textbf{AI prototype} that analyzes PLM XML design data and automates compliance checks.}
+    \resumeItem{As \textbf{Quality Coach}, onboarded \textbf{6 repositories} to \textbf{SonarQube} quality gates, raised unit-test coverage with unittest and fixed critical issues.}
 \resumeItemListEnd
 
 \end{itemize}
