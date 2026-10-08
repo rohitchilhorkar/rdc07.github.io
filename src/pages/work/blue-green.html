@@ -1,4 +1,4 @@
-<!--meta {"title": "Blue-Green release CLI · Rohit Chilhorkar", "description": "A command-line tool that runs 15+ validation and deployment steps for Blue-Green production releases on AWS."}-->
+<!--meta {"title": "Blue-Green upgrades for Teamcenter X · Rohit Chilhorkar", "description": "Zero-downtime Blue-Green upgrades for Teamcenter X on AWS, with a CLI that runs 15+ post-deployment checks and saves about 30 minutes per release."}-->
 {{> head}}
 <body>
 {{> nav}}
@@ -6,14 +6,14 @@
   <a class="crumb" href="/#work">{{> i-left}}<span class="w">All work</span><span class="k">All case files</span></a>
   <div class="dossier">
   <span class="file__tab k">CASE 003</span><span class="stamp-closed k" aria-label="Status: closed">CLOSED</span>
-  <div class="case__meta"><span class="mark mark--pratiti" aria-hidden="true">P</span><b>Pratiti Technologies · client: Siemens DISW</b><span>·</span><span>DevOps Engineer</span></div>
+  <div class="case__meta"><span class="mark mark--pratiti" aria-hidden="true">S</span><b>Siemens Digital Industries Software · via Pratiti Technologies</b><span>·</span><span>DevOps Engineer</span></div>
   <h1>Blue-Green release CLI</h1>
-  <p class="lede">One command for production releases that runs 15+ validation and deployment steps, the same way every time.</p>
+  <p class="lede">Zero-downtime upgrades for Teamcenter X, Siemens' cloud PLM, with one CLI that runs 15+ post-deployment checks on every release.</p>
 
   <ul class="facts">
-    <li class="stat"><span class="stat__n">15+</span><span class="stat__l">validation and deployment steps automated</span></li>
-    <li class="stat"><span class="stat__n">Python · Bash</span><span class="stat__l">validation tooling</span></li>
-    <li class="stat"><span class="stat__n">Terraform</span><span class="stat__l">and Ansible for the AWS infra underneath</span></li>
+    <li class="stat"><span class="stat__n">0</span><span class="stat__l">downtime during version upgrades</span></li>
+    <li class="stat"><span class="stat__n">15+</span><span class="stat__l">post-deployment checks automated</span></li>
+    <li class="stat"><span class="stat__n">~30 min</span><span class="stat__l">of manual checking saved per release</span></li>
   </ul>
   </div>
 
@@ -24,17 +24,18 @@
 
   <div class="prose">
     <h2>The idea</h2>
-    <p>Blue-Green keeps two environments. The new release goes to the one that is not serving users, gets checked, and only then takes over. If something is wrong, the old one is still there.</p>
+    <p>Blue-Green keeps two environments. The new Teamcenter X version goes to the one that is not serving users, gets checked, and only then takes over. Users never see the upgrade happen, and if something is wrong, the old environment is still there.</p>
 
     <h2>What was built</h2>
     <ul>
-      <li>A <b>CLI</b> that wraps the release into one command and runs <b>15+ validation and deployment steps</b> in order.</li>
+      <li>Automated <b>Teamcenter X version upgrades</b> on a Blue-Green strategy, removing manual upgrade steps.</li>
+      <li>A <b>CLI</b> that runs <b>15+ post-deployment checks</b> after every release, saving <b>about 30 minutes</b> of manual checking each time.</li>
       <li>Around it, <b>Python and Bash tooling</b> for deployment validation and IAM permission-boundary troubleshooting.</li>
       <li>Infrastructure underneath provisioned with <b>Terraform and Ansible</b> on AWS.</li>
     </ul>
 
     <h2>Why it matters</h2>
-    <p>Manual release checklists drift. Putting the steps in a tool makes every production release follow the same path, and makes a skipped check much harder.</p>
+    <p>Manual release checklists drift. Putting the checks in a tool makes every production release follow the same path, and makes a skipped check much harder.</p>
   </div>
 
   <hr class="rule w">

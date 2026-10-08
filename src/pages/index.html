@@ -59,7 +59,7 @@
     <div class="worked">
       <span>Worked with:</span>
       <span class="chip-co"><span class="mark mark--nice" aria-hidden="true">N</span>NICE Actimize</span>
-      <span class="chip-co"><span class="mark mark--pratiti" aria-hidden="true">P</span>Pratiti · Siemens DISW</span>
+      <span class="chip-co"><span class="mark mark--pratiti" aria-hidden="true">S</span>Siemens DISW · via Pratiti</span>
     </div>
     <hr class="hr">
 
@@ -90,7 +90,7 @@
       <div class="worked">
         <span>Allies:</span>
         <span class="chip-co"><span class="mark" aria-hidden="true">N</span>NICE Actimize</span>
-        <span class="chip-co"><span class="mark mark--pratiti" aria-hidden="true">P</span>Pratiti · Siemens DISW</span>
+        <span class="chip-co"><span class="mark mark--pratiti" aria-hidden="true">S</span>Siemens DISW · via Pratiti</span>
       </div>
     </section>
   </div>
@@ -137,27 +137,30 @@
           <div class="body">
             <ul>
               <li>Moved <b>9+ core services</b> of the Markets Surveillance Cloud onto <b>Amazon EKS</b> as Deployments, StatefulSets and Jobs, and deployed <b>ActiveMQ</b> messaging for <b>1M+ financial alerts a day</b>.</li>
-              <li>Deployed <b>3 AI services</b> (alert classification, deduplication, AI Assist) on EKS with Karpenter <b>CPU and NVIDIA GPU pools that scale from zero</b> for Llama 3.1 and 3.2 inference, using IRSA instead of static keys.</li>
-              <li>Built an <b>LLM-assisted rightsizing tool</b> for <b>1,300+ AWS resources</b> that cut monthly spend from <b>$32K to $29.5K</b>, plus a nightly scheduler that stops non-prod EC2.</li>
               <li>Designed connectivity from an EKS-hosted UI to an IP-whitelisted Tableau server: an <b>Nginx reverse proxy</b> plus a whitelisted <b>cluster CIDR</b> instead of ephemeral pod IPs. Live in production.</li>
-              <li>Implemented log-based monitoring and alerting for the surveillance engine on EKS across <b>6 components</b>, catching failures, errors and performance issues.</li>
-              <li>Automated AMI migrations across <b>475+ EC2 instances</b> with Python and Bash, replacing manual patching.</li>
-              <li>Scripted the ActOne upgrade for the VM-based Communication Surveillance product; automated the Market Data Service v2 to v3 migration; moved Jenkins to dynamic agents.</li>
+              <li>Implemented log-based monitoring and alerting for the surveillance engine on EKS across <b>6 components</b>, reading live logs from shared volumes and catching failures, errors and performance issues.</li>
+              <li>Deployed <b>3 AI services</b> (alert classification, deduplication, AI Assist) on EKS with <b>Jenkins, Ansible, Helm and Terraform</b>, using Karpenter <b>CPU and NVIDIA GPU pools that scale from zero</b> for Llama 3.1 and 3.2 inference, and IRSA instead of static keys.</li>
+              <li>Automated the migration of <b>475+ EC2 instances</b> to <b>Amazon Linux 2023</b> (AL2 end of support) with Python and Bash, closing patch gaps and meeting <b>antivirus compliance</b>.</li>
+              <li>Scripted the <b>ActOne upgrade</b> for the VM-based Communication Surveillance product; supported UAT and production runs and handed over to the team.</li>
+              <li>Moved Jenkins to <b>on-demand dynamic agents</b>, retiring <b>10 always-on t3.2xlarge</b> build machines; automated the Market Data Service v2 to v3 migration and CloudWatch to S3 log pipelines.</li>
+              <li>Built an <b>LLM-assisted rightsizing tool</b> for <b>1,300+ AWS resources</b> (EC2, EFS, RDS) that cut monthly spend from <b>$32K to $29.5K</b>, about <b>$30K a year</b>, plus a nightly scheduler that stops non-prod EC2.</li>
             </ul>
           </div>
         </details>
         <details>
           <summary>
-            <span class="logo mark--pratiti" aria-hidden="true">P</span>
-            <span><span class="op k">Mission complete</span><span class="co">Pratiti Technologies</span><span class="role">DevOps Engineer · client: Siemens Digital Industries Software</span><span class="range-m">Jul 2023 to Nov 2025</span></span>
+            <span class="logo mark--pratiti" aria-hidden="true">S</span>
+            <span><span class="op k">Mission complete</span><span class="co">Siemens Digital Industries Software</span><span class="role">DevOps Engineer · via Pratiti Technologies · Teamcenter X (cloud PLM)</span><span class="range-m">Jul 2023 to Nov 2025</span></span>
             <span class="when"><span><span class="range">Jul 2023 to Nov 2025</span><span class="sep"> · </span><span class="dur" data-start="2023-07" data-end="2025-11">2 yrs 5 mos</span></span><span class="chev">{{> i-chev}}</span></span>
           </summary>
           <div class="body">
             <ul>
-              <li>Built a <b>Blue-Green deployment CLI</b> that automates <b>15+ validation and deployment steps</b> for production releases.</li>
-              <li>Set up <b>Prometheus and Grafana</b> dashboards and alerting for infrastructure and application incidents.</li>
-              <li>Provisioned AWS infrastructure (EC2, EKS, RDS, S3, IAM, EFS) with <b>Terraform and Ansible</b>.</li>
-              <li>Wrote <b>Python and Bash tooling</b> for deployment validation, IAM permission-boundary troubleshooting and recurring ops tasks.</li>
+              <li>Automated version upgrades of <b>Teamcenter X</b> with a <b>Blue-Green deployment</b> strategy, enabling <b>zero-downtime releases</b> and removing manual upgrade steps.</li>
+              <li>Built a <b>Blue-Green deployment CLI</b> that automates <b>15+ post-deployment checks</b>, saving <b>about 30 minutes per release</b>.</li>
+              <li>Led the migration to <b>containerized workloads</b>, making deployments easier to scale and speeding up customer environment provisioning.</li>
+              <li>Provisioned AWS infrastructure (EC2, EKS, RDS, S3, IAM, EFS) with <b>Terraform and Ansible</b>, set up <b>Prometheus and Grafana</b> alerting, and migrated workloads to <b>AWS Graviton</b>.</li>
+              <li>Built <b>PLMXML Multiverse</b> at a hackathon: an <b>AI prototype</b> that analyzes PLM XML design data and automates compliance checks.</li>
+              <li>As <b>Quality Coach</b>, onboarded <b>6 repositories</b> to <b>SonarQube</b> quality gates, raised unit-test coverage and fixed critical issues.</li>
             </ul>
           </div>
         </details>
@@ -213,9 +216,9 @@
           <span class="file__tab k">CASE 003</span><span class="stamp-closed k" aria-label="Status: closed">CLOSED</span>
           <div class="case__fig evidence" aria-hidden="true">{{> dg-bluegreen}}</div>
           <div>
-            <div class="case__meta"><span class="mark mark--pratiti" aria-hidden="true">P</span><b>Pratiti · Siemens DISW</b><span>·</span><span>DevOps Engineer</span></div>
+            <div class="case__meta"><span class="mark mark--pratiti" aria-hidden="true">S</span><b>Siemens DISW</b><span>·</span><span>DevOps Engineer</span></div>
             <h3><a href="/work/blue-green/"><span class="w">Blue-Green release CLI</span><span class="k">Two faces of every release</span></a></h3>
-            <p><span class="k">A Blue-Green release CLI. </span>One command for production releases that runs 15+ validation and deployment steps, so a release is the same every time.</p>
+            <p><span class="k">A Blue-Green release CLI. </span>Zero-downtime Teamcenter X upgrades, with a CLI that runs 15+ post-deployment checks and saves about 30 minutes per release.</p>
             <div class="chips"><span class="chip">Blue-Green</span><span class="chip">Python</span><span class="chip">AWS</span><span class="chip">Release automation</span></div>
             <span class="link"><span class="w">Read the case study</span><span class="k">Open the file</span> {{> i-arrow}}</span>
           </div>
@@ -265,9 +268,9 @@
       </div>
       <div class="belt k" aria-hidden="true"><div class="belt__buckle">RC</div></div>
       <div class="stack pouches">
-        <div class="stack__row pouch"><h3>Cloud</h3><div class="chips"><span class="chip">AWS EC2</span><span class="chip">EKS</span><span class="chip">IAM · IRSA</span><span class="chip">VPC</span><span class="chip">RDS</span><span class="chip">S3</span><span class="chip">EFS</span><span class="chip">KMS</span><span class="chip">Linux</span><span class="chip">Cost optimisation</span></div></div>
+        <div class="stack__row pouch"><h3>Cloud</h3><div class="chips"><span class="chip">AWS EC2</span><span class="chip">EKS</span><span class="chip">Graviton</span><span class="chip">IAM · IRSA</span><span class="chip">VPC</span><span class="chip">RDS</span><span class="chip">S3</span><span class="chip">EFS</span><span class="chip">KMS</span><span class="chip">Linux</span><span class="chip">Cost optimisation</span></div></div>
         <div class="stack__row pouch"><h3>Containers and platform</h3><div class="chips"><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Karpenter</span><span class="chip">Helm</span><span class="chip">ArgoCD</span><span class="chip">GitOps</span><span class="chip">NVIDIA GPU nodes</span></div></div>
-        <div class="stack__row pouch"><h3>IaC and CI/CD</h3><div class="chips"><span class="chip">Terraform</span><span class="chip">Ansible</span><span class="chip">Jenkins</span><span class="chip">GitLab CI</span><span class="chip">GitHub Actions</span><span class="chip">Blue-Green</span></div></div>
+        <div class="stack__row pouch"><h3>IaC and CI/CD</h3><div class="chips"><span class="chip">Terraform</span><span class="chip">Ansible</span><span class="chip">Jenkins</span><span class="chip">GitLab CI</span><span class="chip">GitHub Actions</span><span class="chip">SonarQube</span><span class="chip">Blue-Green</span></div></div>
         <div class="stack__row pouch"><h3>Observability</h3><div class="chips"><span class="chip">Prometheus</span><span class="chip">Grafana</span><span class="chip">CloudWatch</span><span class="chip">Alerting</span><span class="chip">Incident triage</span><span class="chip">Root cause analysis</span></div></div>
         <div class="stack__row pouch"><h3>Code</h3><div class="chips"><span class="chip">Python (Boto3)</span><span class="chip">Bash</span><span class="chip">YAML</span></div></div>
         <div class="stack__row pouch"><h3>Messaging and data</h3><div class="chips"><span class="chip">ActiveMQ</span><span class="chip">RabbitMQ</span><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">SQL Server</span></div></div>
