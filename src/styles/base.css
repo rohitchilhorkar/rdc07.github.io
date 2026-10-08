@@ -64,7 +64,7 @@
 /* Cursor spotlight on cards */
 .spot { position: relative; }
 .spot::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity 0.3s;
-  background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--accent) 11%, transparent), transparent 65%); }
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--text) 8%, transparent), transparent 60%); }
 .spot:hover::after { opacity: 1; }
 
 /* Data flowing through the case-study diagrams */
