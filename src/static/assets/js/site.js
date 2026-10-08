@@ -130,6 +130,35 @@
     t.style.setProperty("--my", (e.clientY - r.top) + "px");
   }, { passive: true });
 
+  // Hero name: split into letters so they can ripple on hover
+  document.querySelectorAll(".hero h1").forEach(function (h) {
+    var text = h.textContent.trim(), i = 0;
+    h.setAttribute("aria-label", text);
+    h.innerHTML = text.split(" ").map(function (word) {
+      return '<span class="word" aria-hidden="true">' + word.split("").map(function (ch) {
+        return '<span class="ch" style="--i:' + (i++) + '">' + ch + "</span>";
+      }).join("") + "</span>";
+    }).join(" ");
+  });
+
+  // Hero photo: 3D tilt toward the cursor with a moving shine
+  if (!reduce) {
+    document.querySelectorAll(".hero__photo").forEach(function (ph) {
+      ph.addEventListener("pointermove", function (e) {
+        var r = ph.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        ph.style.setProperty("--rx", ((0.5 - y) * 16).toFixed(2) + "deg");
+        ph.style.setProperty("--ry", ((x - 0.5) * 16).toFixed(2) + "deg");
+        ph.style.setProperty("--px", (x * 100).toFixed(1) + "%");
+        ph.style.setProperty("--py", (y * 100).toFixed(1) + "%");
+      });
+      ph.addEventListener("pointerleave", function () {
+        ph.style.setProperty("--rx", "0deg");
+        ph.style.setProperty("--ry", "0deg");
+      });
+    });
+  }
+
   // Headings decode from random glyphs when their section scrolls in
   var GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#$%&*<>/";
   var scramble = function (el) {
