@@ -21,27 +21,6 @@
       </div>
     </div>
 
-    <hr class="hr">
-    <div class="worked">
-      <span>Worked with:</span>
-      <span class="chip-co"><span class="mark mark--nice" aria-hidden="true">N</span>NICE Actimize</span>
-      <span class="chip-co"><span class="mark mark--pratiti" aria-hidden="true">P</span>Pratiti · Siemens DISW</span>
-    </div>
-    <hr class="hr">
-
-    <ul class="now" aria-label="Right now">
-      <li>{{> i-now}}<span class="nk">Running</span><span class="v">financial surveillance platforms on AWS EKS</span></li>
-      <li>{{> i-now}}<span class="nk">Learning</span><span class="v">MLOps system design: GPU scheduling, Milvus and vector DBs, Kubeflow</span></li>
-      <li>{{> i-now}}<span class="nk">Based in</span><span class="v">Pune, India · open to remote</span></li>
-    </ul>
-
-    <hr class="rule">
-    <div class="links">
-      <a class="pill" href="https://github.com/rohitchilhorkar" rel="me">{{> i-github}}GitHub</a>
-      <a class="pill" href="https://www.linkedin.com/in/rohitchilhorkar" rel="me">{{> i-linkedin}}LinkedIn</a>
-      <a class="pill" href="mailto:rdchilhorkar@gmail.com">{{> i-mail}}Email</a>
-      <a class="pill" href="/Rohit_Chilhorkar_Resume.pdf" download>{{> i-download}}Resume</a>
-    </div>
   </section>
 
   <!-- Hero: Night Shift -->
@@ -71,6 +50,34 @@
     </div>
   </section>
 
+  <!-- Control-plane simulation (shared) -->
+  {{> sim}}
+
+  <!-- Warm hero details -->
+  <section class="hero-more wrap w" aria-label="Background">
+    <hr class="hr">
+    <div class="worked">
+      <span>Worked with:</span>
+      <span class="chip-co"><span class="mark mark--nice" aria-hidden="true">N</span>NICE Actimize</span>
+      <span class="chip-co"><span class="mark mark--pratiti" aria-hidden="true">P</span>Pratiti · Siemens DISW</span>
+    </div>
+    <hr class="hr">
+
+    <ul class="now" aria-label="Right now">
+      <li>{{> i-now}}<span class="nk">Running</span><span class="v">financial surveillance platforms on AWS EKS</span></li>
+      <li>{{> i-now}}<span class="nk">Learning</span><span class="v">MLOps system design: GPU scheduling, Milvus and vector DBs, Kubeflow</span></li>
+      <li>{{> i-now}}<span class="nk">Based in</span><span class="v">Pune, India · open to remote</span></li>
+    </ul>
+
+    <hr class="rule">
+    <div class="links">
+      <a class="pill" href="https://github.com/rohitchilhorkar" rel="me">{{> i-github}}GitHub</a>
+      <a class="pill" href="https://www.linkedin.com/in/rohitchilhorkar" rel="me">{{> i-linkedin}}LinkedIn</a>
+      <a class="pill" href="mailto:rdchilhorkar@gmail.com">{{> i-mail}}Email</a>
+      <a class="pill" href="/Rohit_Chilhorkar_Resume.pdf" download>{{> i-download}}Resume</a>
+    </div>
+  </section>
+
   <!-- Patrol log: Night Shift -->
   <div class="wrap k">
     <section class="log reveal" aria-label="Patrol log">
@@ -93,7 +100,7 @@
     <hr class="rule w">
     <div class="section">
       <div class="section__head head">
-        <h2 class="label" id="impact-h">{{> i-pulse}}<span class="w">Impact</span><span class="k"><span class="kicker">Impact</span>Night report</span></h2>
+        <h2 class="label" id="impact-h">{{> i-pulse}}<span class="w" data-scramble>Impact</span><span class="k"><span class="kicker">Impact</span><span data-scramble>Night report</span></span></h2>
         <span class="aside k">from shipped production work</span>
       </div>
       <div class="panel">
@@ -117,7 +124,7 @@
     <hr class="rule w">
     <div class="section">
       <div class="section__head head">
-        <h2 class="label" id="xp-h">{{> i-brief}}<span class="w">Experience</span><span class="k"><span class="kicker">Experience</span>Missions</span></h2>
+        <h2 class="label" id="xp-h">{{> i-brief}}<span class="w" data-scramble>Experience</span><span class="k"><span class="kicker">Experience</span><span data-scramble>Missions</span></span></h2>
         <span class="aside k">3 operations</span>
       </div>
       <div class="xp">
@@ -176,7 +183,7 @@
     <hr class="rule w">
     <div class="section">
       <div class="section__head head">
-        <h2 class="label" id="work-h">{{> i-layers}}<span class="w">Work</span><span class="k"><span class="kicker">Work</span>Case files</span></h2>
+        <h2 class="label" id="work-h">{{> i-layers}}<span class="w" data-scramble>Work</span><span class="k"><span class="kicker">Work</span><span data-scramble>Case files</span></span></h2>
         <span class="aside k">3 cases · all closed</span>
       </div>
       <div class="cases files">
@@ -222,7 +229,7 @@
     <hr class="rule w">
     <div class="section">
       <div class="section__head head">
-        <h2 class="label" id="builds-h">{{> i-grid}}<span class="w">Builds</span><span class="k"><span class="kicker">Builds</span>The Cave</span></h2>
+        <h2 class="label" id="builds-h">{{> i-grid}}<span class="w" data-scramble>Builds</span><span class="k"><span class="kicker">Builds</span><span data-scramble>The Cave</span></span></h2>
         <a class="link" href="https://github.com/rohitchilhorkar">{{> i-github}}rohitchilhorkar</a>
       </div>
       <div class="repos cave">
@@ -253,7 +260,7 @@
     <hr class="rule w">
     <div class="section">
       <div class="section__head head">
-        <h2 class="label" id="stack-h">{{> i-layers}}<span class="w">Stack</span><span class="k"><span class="kicker">Stack</span>Utility belt</span></h2>
+        <h2 class="label" id="stack-h">{{> i-layers}}<span class="w" data-scramble>Stack</span><span class="k"><span class="kicker">Stack</span><span data-scramble>Utility belt</span></span></h2>
         <span class="aside k">7 pouches</span>
       </div>
       <div class="belt k" aria-hidden="true"><div class="belt__buckle">RC</div></div>
@@ -274,7 +281,7 @@
     <hr class="rule w">
     <div class="section">
       <div class="section__head head">
-        <h2 class="label" id="creds-h">{{> i-award}}<span class="w">Certs and education</span><span class="k"><span class="kicker">Certs and education</span>Training</span></h2>
+        <h2 class="label" id="creds-h">{{> i-award}}<span class="w" data-scramble>Certs and education</span><span class="k"><span class="kicker">Certs and education</span><span data-scramble>Training</span></span></h2>
       </div>
       <div class="creds">
         <div class="cred">{{> i-award}}<div><b>AWS Certified Cloud Practitioner</b><span class="muted">CLF-C02</span></div></div>

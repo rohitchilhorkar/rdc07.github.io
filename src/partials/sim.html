@@ -1,0 +1,14 @@
+<section class="wrap sim-wrap" id="sim" aria-labelledby="sim-h">
+  <div class="sim" data-sim>
+    <div class="sim__bar">
+      <span class="sim__title" id="sim-h"><span class="dot" aria-hidden="true"></span>control-plane.sim</span>
+      <span class="sim__count">≈ <b data-sim-count>0</b> alerts processed since you opened this page <span class="sim__note">(at 1M+ a day)</span></span>
+    </div>
+    <canvas class="sim__canvas" role="img" aria-label="Animated illustration: alerts flow from trade feeds through ActiveMQ and 9+ services on Amazon EKS to AI services and analysts. During a traffic spike, Karpenter adds GPU nodes, then scales the GPU pool back to zero."></canvas>
+    <div class="sim__foot">
+      <ol class="sim__log" data-sim-log aria-live="off"></ol>
+      <button class="btn sim__btn" type="button" data-sim-spike>{{> i-pulse}}Simulate a spike</button>
+    </div>
+  </div>
+  <p class="sim__caption">An illustration of the platform, simulated in your browser. Not live data.</p>
+</section>

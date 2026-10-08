@@ -119,6 +119,119 @@
     });
   });
 
+  // Soft spotlight that follows the cursor across cards
+  var spotSel = ".case, .repo, .stat, .xp details, .cred, .stack__row, .pouch";
+  document.querySelectorAll(spotSel).forEach(function (el) { el.classList.add("spot"); });
+  document.addEventListener("pointermove", function (e) {
+    var t = e.target.closest && e.target.closest(".spot");
+    if (!t) return;
+    var r = t.getBoundingClientRect();
+    t.style.setProperty("--mx", (e.clientX - r.left) + "px");
+    t.style.setProperty("--my", (e.clientY - r.top) + "px");
+  }, { passive: true });
+
+  // Headings decode from random glyphs when their section scrolls in
+  var GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#$%&*<>/";
+  var scramble = function (el) {
+    if (reduce || el.getAttribute("data-done")) return;
+    el.setAttribute("data-done", "1");
+    var final = el.textContent, len = final.length, t0 = performance.now(), dur = 650;
+    el.setAttribute("aria-label", final);
+    var finished = false;
+    // If animation frames are paused (background tab), still land on the real text
+    setTimeout(function () { finished = true; el.textContent = final; }, dur + 80);
+    var tick = function (now) {
+      if (finished) return;
+      var p = Math.min(1, (now - t0) / dur), shown = Math.floor(p * len), out = "";
+      for (var i = 0; i < len; i++) {
+        var ch = final.charAt(i);
+        out += i < shown || ch === " " ? ch : GLYPHS.charAt((Math.random() * GLYPHS.length) | 0);
+      }
+      el.textContent = p < 1 ? out : final;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  // Command menu: Ctrl+K / Cmd+K
+  var dlg = document.querySelector("[data-cmdk-dialog]");
+  if (dlg && dlg.showModal) {
+    var input = dlg.querySelector(".cmdk__input"), list = dlg.querySelector(".cmdk__list");
+    var sel = 0, shown = [];
+    var isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
+    document.querySelectorAll("[data-mod]").forEach(function (k) { k.textContent = isMac ? "⌘" : "Ctrl"; });
+    var smooth = reduce ? "auto" : "smooth";
+    var go = function (hash) {
+      return function () {
+        var el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: smooth });
+        else location.href = "/" + hash;
+      };
+    };
+    var openUrl = function (u) { return function () { window.open(u, "_blank", "noopener"); }; };
+    var click = function (s) { return function () { var b = document.querySelector(s); if (b) b.click(); }; };
+    var cmds = [
+      { t: "Go to Experience", k: "jobs missions career", run: go("#experience") },
+      { t: "Go to Work", k: "case studies projects case files", run: go("#work") },
+      { t: "Go to Builds", k: "github repos cave", run: go("#builds") },
+      { t: "Go to Stack", k: "skills tools utility belt", run: go("#stack") },
+      { t: "Contact", k: "email hire signal reach", run: go("#contact") },
+      { t: "Download resume (PDF)", k: "cv resume pdf", run: function () {
+        var a = document.createElement("a");
+        a.href = "/Rohit_Chilhorkar_Resume.pdf"; a.download = "";
+        document.body.appendChild(a); a.click(); a.remove();
+      } },
+      { t: "Copy email address", k: "mail copy contact", run: function () { if (navigator.clipboard) navigator.clipboard.writeText("rdchilhorkar@gmail.com"); } },
+      { t: "Open GitHub", k: "code repos source", run: openUrl("https://github.com/rohitchilhorkar") },
+      { t: "Open LinkedIn", k: "profile network", run: openUrl("https://www.linkedin.com/in/rohitchilhorkar") },
+      { t: "Simulate a traffic spike", k: "demo sim gpu karpenter scale", run: function () {
+        var b = document.querySelector("[data-sim-spike]");
+        if (!b) { location.href = "/#sim"; return; }
+        b.scrollIntoView({ behavior: smooth, block: "center" });
+        setTimeout(function () { b.click(); }, reduce ? 0 : 450);
+      } },
+      { t: "Switch theme: warm / Night Shift", k: "batman knight skin dark theme", run: click("[data-skin-toggle]") },
+      { t: "Toggle light / dark", k: "light dark mode theme", when: function () { return !isKnight(); }, run: click("[data-theme-toggle]") },
+      { t: "Release the bats", k: "bats batman", when: isKnight, run: bats }
+    ];
+    var render = function () {
+      var words = input.value.toLowerCase().split(/\s+/).filter(Boolean);
+      shown = cmds.filter(function (c) {
+        if (c.when && !c.when()) return false;
+        var hay = (c.t + " " + c.k).toLowerCase();
+        return words.every(function (w) { return hay.indexOf(w) !== -1; });
+      });
+      sel = Math.min(sel, Math.max(0, shown.length - 1));
+      list.innerHTML = "";
+      if (!shown.length) { list.innerHTML = '<li class="cmdk__empty">No matching command</li>'; return; }
+      shown.forEach(function (c, i) {
+        var li = document.createElement("li");
+        li.setAttribute("role", "option");
+        li.setAttribute("aria-selected", String(i === sel));
+        li.textContent = c.t;
+        li.addEventListener("mousemove", function () { if (sel !== i) { sel = i; render(); } });
+        li.addEventListener("click", function () { runCmd(i); });
+        list.appendChild(li);
+      });
+    };
+    var runCmd = function (i) { var c = shown[i]; if (!c) return; dlg.close(); c.run(); };
+    var openMenu = function () { input.value = ""; sel = 0; render(); dlg.showModal(); input.focus(); };
+    input.addEventListener("input", function () { sel = 0; render(); });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown") { e.preventDefault(); sel = (sel + 1) % Math.max(1, shown.length); render(); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); sel = (sel - 1 + shown.length) % Math.max(1, shown.length); render(); }
+      else if (e.key === "Enter") { e.preventDefault(); runCmd(sel); }
+    });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+    document.querySelectorAll("[data-cmdk]").forEach(function (b) { b.addEventListener("click", openMenu); });
+    document.addEventListener("keydown", function (e) {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        if (dlg.open) dlg.close(); else openMenu();
+      }
+    });
+  }
+
   if (!("IntersectionObserver" in window)) {
     document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
     return;
@@ -129,6 +242,7 @@
     entries.forEach(function (en) {
       if (!en.isIntersecting) return;
       en.target.classList.add("in");
+      en.target.querySelectorAll("[data-scramble]").forEach(scramble);
       io.unobserve(en.target);
     });
   }, { rootMargin: "0px 0px -8% 0px" });

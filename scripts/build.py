@@ -116,6 +116,7 @@ def main():
     site["v_css"] = fingerprint(DIST / "assets" / "css" / "site.css")
     site["v_site"] = fingerprint(DIST / "assets" / "js" / "site.js")
     site["v_theme"] = fingerprint(DIST / "assets" / "js" / "theme.js")
+    site["v_sim"] = fingerprint(DIST / "assets" / "js" / "sim.js")
 
     urls = []
     for page in sorted((SRC / "pages").rglob("*.html")):
